@@ -4,7 +4,7 @@
 
 ## Elevator pitch
 
-Mục đích sản phẩm: chưa chốt (xem CV-1 trong `ai-context/working/issues-open.md`). Không suy đoán từ tên repo.
+Build các CV cá nhân dạng trang HTML tĩnh tự chứa, public qua GitHub Pages. Dữ liệu nguồn mỗi người nằm ở `<ten>/` (vd `quan_phan/`), trang xuất ra ở root (vd `cv_quan_phan.html`).
 
 ## Hiện trạng
 

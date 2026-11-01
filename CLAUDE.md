@@ -5,12 +5,12 @@
 
 ## Workspace là gì
 
-`c:/CV` **chính là git repo** `happywindapp/CV` (nhánh `main`). Hiện chỉ có scaffold AI, chưa có code/nội dung; mục đích + tech stack chưa chốt (xem CV-1 trong `ai-context/working/issues-open.md`).
+`c:/CV` **chính là git repo** `happywindapp/CV` (nhánh `main`), dùng để build các CV cá nhân dạng HTML tĩnh public qua GitHub Pages.
 Đọc `ai-context/project-context.md` để nắm toàn cảnh.
 
 ## Tech stack
 
-- **Sản phẩm:** chưa chốt — điền khi có code, không suy đoán từ tên repo.
+- **Sản phẩm:** HTML + CSS thuần, 1 file tự chứa (font + ảnh nhúng base64), không build step.
 - **Scaffold AI:** Markdown (`docs/`, `ai-context/`), PowerShell (`scripts/`).
 
 ## Naming convention
