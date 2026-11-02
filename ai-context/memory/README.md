@@ -26,3 +26,5 @@
   ngã rẽ thiết kế ⇒ hỏi user; review PR theo mục D. Bản Claude: `~/.claude/rules/code-quality-gates.md`
 
 - [scaffold-robocopy-copies-skill-junctions.md](scaffold-robocopy-copies-skill-junctions.md) — robocopy cần `/XJ` khi copy template
+
+- [headless-chrome-mobile-screenshot-needs-iframe.md](headless-chrome-mobile-screenshot-needs-iframe.md) — chụp layout mobile bằng Chrome headless phải qua wrapper iframe, `--window-size` nhỏ cho kết quả sai
