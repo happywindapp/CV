@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Serena Truong | Event Coordinator Intern</title>
+<meta name="description" content="Public Relations senior at HUFLIT specializing in Event Management, with hands-on coordinator experience at fashion shows and an international conference.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Serena Truong | Event Coordinator Intern">
+<meta property="og:description" content="Backstage coordination, check-in operations and VIP hospitality for fashion shows and conferences.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f7f3f0;
+  --surface: #ffffff;
+  --text: #2a1a13;
+  --muted: #6b5a50;
+  --line: #e8ddd5;
+  --accent: #8c5e45;
+  --accent-strong: #6e4632;
+  --accent-soft: #f5e9e1;
+  --accent-text: #ffffff;
+  --hero-bg: #2b1b14;
+  --hero-text: #f7efe9;
+  --hero-muted: #c9b3a6;
+  --hero-accent: #e2b598;
+  --shadow: 0 1px 2px rgb(43 27 20 / 0.05), 0 10px 30px -14px rgb(43 27 20 / 0.22);
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17100c;
+    --surface: #221812;
+    --text: #f1e7e0;
+    --muted: #bba79a;
+    --line: #3a2b22;
+    --accent: #e2b598;
+    --accent-strong: #efcdb6;
+    --accent-soft: rgb(226 181 152 / 0.12);
+    --accent-text: #17100c;
+    --hero-bg: #120b08;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 12px 32px -16px rgb(0 0 0 / 0.6);
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .hero-inner > * { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .hero-inner > :last-child { animation-delay: 0.12s; }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+h1, h2, h3, h4, p, ul, dl, dd { margin: 0; }
+h1, h2, h3, h4, strong, dt { font-weight: 600; }
+ul { padding: 0; list-style: none; }
+a { color: var(--accent); text-underline-offset: 0.18em; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.wrap { width: 100%; max-width: 66rem; margin-inline: auto; padding-inline: 1.5rem; }
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--accent);
+  color: var(--accent-text);
+  border-radius: 8px;
+}
+.skip:focus { top: 0.75rem; z-index: 3; }
+
+.nav, .hero, footer {
+  color-scheme: dark;
+  --bg: var(--hero-bg);
+  --text: var(--hero-text);
+  --muted: var(--hero-muted);
+  --line: rgb(255 255 255 / 0.12);
+  --accent: var(--hero-accent);
+  --accent-text: var(--hero-bg);
+  color: var(--text);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: color-mix(in srgb, var(--hero-bg) 88%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; gap: 1.5rem; height: 3.75rem; }
+.nav-name { font-weight: 600; margin-right: auto; color: var(--text); text-decoration: none; }
+.nav-links { display: flex; gap: 1.25rem; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9375rem; transition: color 0.15s ease; }
+.nav-links a:hover { color: var(--accent); }
+
+.btn {
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 0.375rem 0.875rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: translateY(1px); }
+
+.lang { display: flex; padding: 2px; border: 1px solid var(--accent); border-radius: 8px; background: color-mix(in srgb, var(--accent) 10%, var(--bg)); }
+.lang button { border: 0; border-radius: 6px; background: none; color: var(--accent); font: inherit; font-size: 0.8125rem; font-weight: 600; line-height: 1.5; padding: 0.125rem 0.5rem; cursor: pointer; }
+.lang button:hover { background: color-mix(in srgb, var(--accent) 22%, var(--bg)); }
+.lang button[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); }
+
+.hero { position: relative; isolation: isolate; overflow: hidden; background: var(--hero-bg); }
+.hero::before, .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; }
+.hero::before {
+  background:
+    radial-gradient(42rem 26rem at 88% 0%, rgb(226 181 152 / 0.24), transparent 70%),
+    radial-gradient(34rem 22rem at 0% 100%, rgb(165 124 101 / 0.3), transparent 70%);
+}
+.hero::after {
+  background-image: radial-gradient(rgb(255 255 255 / 0.09) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent 85%);
+  mask-image: linear-gradient(to bottom, #000, transparent 85%);
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3rem;
+  align-items: center;
+  padding-block: 4.5rem 8rem;
+}
+.hero h1 { font-size: clamp(2.75rem, 6.5vw, 4.25rem); line-height: 1.05; letter-spacing: -0.035em; }
+.role-title { margin-top: 0.875rem; font-size: 1.375rem; font-weight: 600; line-height: 1.3; color: var(--accent); }
+.tagline { margin-top: 0.5rem; max-width: 36rem; color: var(--muted); font-size: 1.0625rem; }
+.contact { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; font-size: 0.875rem; }
+.contact li { padding: 0.3125rem 0.875rem; border: 1px solid var(--line); border-radius: 999px; background: rgb(255 255 255 / 0.04); }
+.contact a { color: var(--text); text-decoration: none; }
+.contact a:hover { color: var(--accent); }
+.photo {
+  display: block;
+  width: 12.5rem;
+  height: 12.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px var(--hero-bg), 0 0 0 7px var(--accent), 0 24px 60px -20px rgb(226 181 152 / 0.45);
+}
+
+.figures { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: -4.5rem; }
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.25rem 1.375rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.figure dt { order: 2; font-weight: 400; font-size: 0.875rem; line-height: 1.45; color: var(--muted); }
+.figure dd { order: 1; font-size: 2.25rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; color: var(--accent); white-space: nowrap; }
+
+main { counter-reset: section; }
+section { padding-block: 4.5rem 0; }
+section > h2 { display: flex; align-items: center; gap: 0.875rem; white-space: nowrap; font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 2rem; }
+section > h2::before {
+  counter-increment: section;
+  content: "0" counter(section);
+  padding: 0.125rem 0.5rem;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 1rem;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+section > h2::after { content: ""; flex: 0 1 14rem; height: 1px; background: var(--line); }
+
+.about { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 3rem; }
+.about-main { font-size: 1.0625rem; }
+.goal {
+  align-self: start;
+  padding: 1.5rem 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.goal h3 { margin-bottom: 0.375rem; font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+
+.job { position: relative; display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 0 2.5rem; padding-bottom: 1.5rem; }
+.job::before { content: ""; position: absolute; left: calc(8.5rem + 1.25rem - 1px); top: 0; bottom: 0; width: 2px; background: var(--line); }
+.job:last-of-type::before { bottom: calc(100% - 2rem); }
+.job::after {
+  content: "";
+  position: absolute;
+  left: calc(8.5rem + 1.25rem - 7px);
+  top: 1.6rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 3px solid var(--accent);
+}
+.job:first-of-type::after { background: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft); }
+.when { color: var(--muted); font-size: 0.875rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.job > .when { padding-top: 1.35rem; text-align: right; font-weight: 600; color: var(--accent); }
+.job > div, .cards > div {
+  padding: 1.5rem 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.job > div:hover, .cards > div:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
+.job h3 { font-size: 1.25rem; line-height: 1.35; }
+.org { font-weight: 600; color: var(--accent); }
+.note { margin-top: 0.375rem; color: var(--muted); font-size: 0.9375rem; }
+.points { margin-top: 0.875rem; }
+.points li { position: relative; padding-left: 1.125rem; margin-top: 0.4375rem; }
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+.sub { margin-top: 1.125rem; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sub + .points { margin-top: 0.25rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-top: 0.5rem; }
+.tags li { padding: 0.0625rem 0.625rem; border: 1px solid var(--line); border-radius: 999px; font-size: 0.8125rem; line-height: 1.7; }
+
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.cards > div { border-top: 3px solid var(--accent); }
+.cards h3 { font-size: 1.125rem; line-height: 1.35; }
+.cards .note { margin-top: 0.25rem; }
+.cards .points { font-size: 0.9375rem; }
+.card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.card-head .when { padding: 0.0625rem 0.5rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; font-size: 0.8125rem; }
+
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.skills > div {
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s ease;
+}
+.skills > div:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
+.skills dt { display: flex; align-items: center; gap: 0.5rem; font-size: 1.0625rem; }
+.skills dt::before { content: ""; width: 0.5rem; height: 1.125rem; border-radius: 2px; background: var(--accent); }
+.skills .tags { margin-top: 0.75rem; }
+
+footer { margin-top: 5rem; padding-block: 2rem 2.5rem; background: var(--hero-bg); color: var(--muted); font-size: 0.9375rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 2rem; }
+
+@media screen and (max-width: 47.99rem) {
+  .nav-name { display: none; }
+  .nav .wrap { justify-content: space-between; gap: 0.75rem; }
+  .nav-links { gap: 0.875rem; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .nav-links a { font-size: 0.875rem; white-space: nowrap; }
+  .btn { font-size: 0.875rem; padding: 0.3125rem 0.625rem; }
+  .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; padding-block: 2.75rem 6rem; }
+  .contact { font-size: 0.8125rem; }
+  .contact li { padding-inline: 0.625rem; overflow-wrap: anywhere; }
+  .photo { order: -1; width: 7.5rem; height: 7.5rem; }
+  .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin-top: -3.5rem; }
+  .figure { padding: 1rem; }
+  .figure dd { font-size: 1.875rem; }
+  section { padding-top: 3.25rem; }
+  section > h2 { font-size: 1.5rem; }
+  .about, .skills, .cards { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .about { gap: 1.5rem; }
+  .job { grid-template-columns: minmax(0, 1fr); padding-left: 1.5rem; }
+  .job::before { left: 6px; }
+  .job::after { left: 0; top: 0.3rem; }
+  .job > .when { padding: 0 0 0.5rem; text-align: left; }
+  .job > div, .goal, .cards > div { padding: 1.25rem; }
+  .card-head { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+}
+
+@media screen and (max-width: 25.99rem) {
+  .btn { display: none; }
+  .figure dd { font-size: 1.375rem; }
+}
+
+@page { size: A4; margin: 13mm 14mm; }
+@media print {
+  :root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --text: #2a1a13;
+    --muted: #6b5a50;
+    --line: #e2d6cd;
+    --accent: #8c5e45;
+    --accent-strong: #6e4632;
+    --accent-soft: #f7ede6;
+    --accent-text: #ffffff;
+    --hero-bg: #ffffff;
+    --hero-text: #2a1a13;
+    --hero-muted: #6b5a50;
+    --hero-accent: #8c5e45;
+    --shadow: none;
+  }
+  .hero, footer { color-scheme: light; --line: #e2d6cd; }
+  html { font-size: 12.5px; scroll-behavior: auto; }
+  body { line-height: 1.5; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .nav, .skip, .hero::before, .hero::after, .job::before, .job::after { display: none; }
+  .wrap { max-width: none; padding-inline: 0; }
+  a { color: inherit; text-decoration: none; }
+  .hero-inner > * { animation: none; }
+  .hero-inner { padding-block: 0 1.25rem; gap: 2rem; }
+  .photo { width: 7.5rem; height: 7.5rem; box-shadow: none; }
+  .figures { margin-top: 0; }
+  .job { grid-template-columns: 6.5rem minmax(0, 1fr); gap: 0 1.25rem; padding-bottom: 1rem; }
+  .job > .when { padding-top: 1rem; white-space: normal; }
+  .job > div, .goal, .skills > div, .cards > div { padding: 0.875rem 1.125rem; }
+  .figure { padding: 0.875rem 1rem; }
+  .skills, .cards, .figures { gap: 0.625rem; }
+  section { padding-top: 1.75rem; }
+  section > h2 { margin-bottom: 1rem; break-after: avoid; }
+  h3, h4, .card-head { break-after: avoid; }
+  li, .skills > div, .cards > div, .figure { break-inside: avoid; }
+  .about { gap: 2rem; }
+  footer { margin-top: 1.75rem; padding-block: 0.75rem 0; border-top: 1px solid var(--line); }
+}
+</style>
+<style>
+{{FONT_CSS}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip-to-content">Skip to content</a>
+
+<nav class="nav" aria-label="Sections" data-i18n="nav-aria" data-i18n-attr="aria-label">
+  <div class="wrap">
+    <a class="nav-name" href="#top">Serena Truong</a>
+    <div class="nav-links">
+      <a href="#about" data-i18n="about">About</a>
+      <a href="#experience" data-i18n="experience">Experience</a>
+      <a href="#activities" data-i18n="activities">Activities</a>
+      <a href="#skills" data-i18n="skills">Skills</a>
+      <a href="#education" data-i18n="education">Education</a>
+    </div>
+    <div class="lang" role="group" aria-label="Language" data-i18n="lang-aria" data-i18n-attr="aria-label">
+      <button type="button" lang="en" aria-pressed="true" data-lang="en">EN</button>
+      <button type="button" lang="vi" aria-pressed="false" data-lang="vi">VI</button>
+    </div>
+    <button class="btn" type="button" onclick="window.print()" data-i18n="save-pdf">Save PDF</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <h1>Serena Truong</h1>
+      <p class="role-title">Event Coordinator Intern</p>
+      <p class="tagline" data-i18n="tagline">Public Relations senior at HUFLIT, specializing in Event Management.</p>
+      <ul class="contact">
+        <li><a href="mailto:dt319412@gmail.com">dt319412@gmail.com</a></li>
+        <li>0834 32****</li>
+        <li data-i18n="city">Ho Chi Minh City</li>
+      </ul>
+    </div>
+    <img class="photo" width="250" height="250" alt="Portrait of Serena Truong" data-i18n="photo-alt" data-i18n-attr="alt" src="{{PHOTO}}">
+  </div>
+</header>
+
+<div class="wrap">
+
+  <main id="main">
+  <dl class="figures">
+    <div class="figure"><dt data-i18n="fig-events">major events as backstage and reception coordinator</dt><dd>3</dd></div>
+    <div class="figure"><dt data-i18n="fig-guests">guests at Destination Runway Fashion Week 2026</dt><dd>300–500</dd></div>
+    <div class="figure"><dt data-i18n="fig-delegates">delegates checked in at an international conference</dt><dd>150</dd></div>
+    <div class="figure"><dt data-i18n="fig-children">children supported in a charity program</dt><dd>40+</dd></div>
+  </dl>
+
+    <section id="about">
+      <h2 data-i18n="about">About</h2>
+      <div class="about">
+        <div class="about-main">
+          <p data-i18n="summary">Senior student majoring in Public Relations (HUFLIT) with hands-on experience in 3 major events as a coordinator covering pre-production, on-site operations, and post-production within professional agency environments.</p>
+        </div>
+        <div class="goal">
+          <h3 data-i18n="career-objective">Career objective</h3>
+          <p data-i18n="objective">Seeking an Event Intern position to engage deeply in end-to-end event management, with a 2-year goal of developing into an Event Specialist capable of risk management and large-scale event/conference operations.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 data-i18n="experience">Experience</h2>
+
+      <article class="job">
+        <p class="when">07 - 09/08/2026</p>
+        <div>
+          <h3>Destination Runway Fashion Week 2026</h3>
+          <p class="org" data-i18n="runway-role">Backstage Coordinator</p>
+          <p class="note" data-i18n="runway-note">Xuan Lan’s Academy · Fashion show, 300 - 500 guests</p>
+          <ul class="points" data-i18n="runway-points">
+            <li>Managed makeup &amp; fitting schedules for 10 models; controlled time slots to ensure 100% of models arrived at the backstage on time before going on stage.</li>
+            <li>Coordinated models through 4 rehearsal and dress rehearsal sessions: guided runway walking routes and adherence to scripts, cooperating directly with the stage director, lighting, and sound teams.</li>
+            <li>Cross-checked performance orders with outfit line-ups prior to each runway entry to minimize sequencing and wardrobe errors during the show.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="when">09/07/2026</p>
+        <div>
+          <h3>Vietnam Infrastructure Symposium 2026</h3>
+          <p class="org" data-i18n="symposium-role">Check-in Operations</p>
+          <p class="note" data-i18n="symposium-note">Bloomberg Businessweek Vietnam · International conference, 100 - 150 guests</p>
+          <ul class="points" data-i18n="symposium-points">
+            <li>Executed the check-in process for 150 delegates and guests: verified registration details, distributed admission badges, and maintained smooth guest flow during peak arrival hours.</li>
+            <li>Handled on-site issues regarding invitation passes and registration mismatches; escalated unresolved queries to designated managers.</li>
+            <li>Guided delegates to correct conference zones, collaborating with a 7-member reception team according to zone assignments.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="when">23 - 25/01/2026</p>
+        <div>
+          <h3 data-i18n="gala-name">Spring Welcoming Gala 2026 - “Ma Dao Khai Xuan”</h3>
+          <p class="org" data-i18n="gala-role">VIP Talent Liaison</p>
+          <p class="note" data-i18n="gala-note">Xuan Lan’s Academy · Fashion show, 300 - 400 guests</p>
+          <ul class="points" data-i18n="gala-points">
+            <li>Provided dedicated care and escort services for 5 VIP models throughout rehearsals up to stage performances.</li>
+            <li>Monitored makeup and fitting timelines, providing continuous updates to coordinators to keep the program running strictly on schedule.</li>
+            <li>Flexibly handled on-site backstage issues while prioritizing public image and the comfort of special guests.</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section id="activities">
+      <h2 data-i18n="activities-title">Community &amp; extracurricular</h2>
+      <div class="cards">
+        <div>
+          <div class="card-head"><h3 data-i18n="charity-name">Charity program “Niềm vui cho em”</h3><p class="when">12/04/2026 · 9:00 - 12:00</p></div>
+          <p class="note" data-i18n="charity-role">Organizing Committee Member · ETHER Group</p>
+          <ul class="points" data-i18n="charity-points">
+            <li><strong>Scale:</strong> Directly connected, gifted, and organized recreational activities for over 40 orphaned/abandoned children at Minh Tam Shelter (Linh Son Pagoda).</li>
+            <li><strong>Execution:</strong> Managed 100% of interactive games and living spaces to foster a warm and joyful atmosphere for the children.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card-head"><h3>Teambuilding “Hành trình kết nối”</h3><p class="when">12/04/2026 · 7:30 - 11:00</p></div>
+          <p class="note" data-i18n="teambuilding-role">Organizing Committee Member · Grateful Group</p>
+          <ul class="points" data-i18n="teambuilding-points">
+            <li>Directly coordinated and operated an outdoor team-building program for 15 members of the FIRC Department.</li>
+            <li>Managed schedules and guided 4 interactive game activities (Circle Connection, Relay Ball Passing, Ring Toss, Team Puzzle).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 data-i18n="skills">Skills</h2>
+      <dl class="skills">
+        <div><dt data-i18n="sk-operations">Event operations</dt><dd><ul class="tags" data-i18n="sk-operations-tags"><li>Backstage coordination</li><li>Rundown management</li><li>Timeline pacing</li></ul></dd></div>
+        <div><dt data-i18n="sk-planning">Planning</dt><dd><ul class="tags" data-i18n="sk-planning-tags"><li>Script writing</li><li>Space allocation</li><li>Layout mapping</li></ul></dd></div>
+        <div><dt data-i18n="sk-risk">Risk management</dt><dd><ul class="tags" data-i18n="sk-risk-tags"><li>Anticipating on-site issues</li><li>Resolving on-site issues</li></ul></dd></div>
+        <div><dt data-i18n="sk-vip">VIP hospitality</dt><dd><ul class="tags" data-i18n="sk-vip-tags"><li>Check-in handling</li><li>Escorting</li><li>Special guest care</li></ul></dd></div>
+        <div><dt data-i18n="sk-leadership">Leadership</dt><dd><ul class="tags" data-i18n="sk-leadership-tags"><li>Team management</li><li>Team leadership</li></ul></dd></div>
+        <div><dt data-i18n="sk-software">Software</dt><dd><ul class="tags" data-i18n="sk-software-tags"><li>CapCut</li><li>Canva</li><li>Basic AI tools</li></ul></dd></div>
+      </dl>
+    </section>
+
+    <section id="education">
+      <h2 data-i18n="education">Education</h2>
+      <div class="cards">
+        <div>
+          <h3 data-i18n="degree">Public Relations, specialization in Event Management</h3>
+          <p class="note" data-i18n="school">Ho Chi Minh City University of Foreign Languages – Information Technology (HUFLIT), 2023 - 2027</p>
+          <h4 class="sub" data-i18n="coursework">Key coursework</h4>
+          <ul class="points" data-i18n="coursework-points">
+            <li>Event Planning</li>
+            <li>Photography &amp; Videography Techniques</li>
+            <li>Crisis Management &amp; Conflict Resolution</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="lang-certs">Languages &amp; certificates</h3>
+          <h4 class="sub" data-i18n="languages">Languages</h4>
+          <ul class="points">
+            <li>TOEIC 550</li>
+          </ul>
+          <h4 class="sub" data-i18n="certificates">Certificates</h4>
+          <ul class="points">
+            <li>Microsoft Office Specialist – Word 2019</li>
+            <li>Microsoft Office Specialist – Excel 2019</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Serena Truong · Event Coordinator Intern</p>
+    <p data-i18n="updated">Updated November 2026</p>
+  </div>
+</footer>
+<script>
+(() => {
+  const VI = {
+    "title": "Serena Truong | Event Coordinator Intern",
+    "skip-to-content": "Bỏ qua đến nội dung",
+    "about": "Giới thiệu",
+    "experience": "Kinh nghiệm",
+    "activities": "Hoạt động",
+    "skills": "Kỹ năng",
+    "education": "Học vấn",
+    "save-pdf": "Lưu PDF",
+    "tagline": "Sinh viên năm cuối ngành Quan hệ Công chúng (HUFLIT), chuyên ngành Quản trị Sự kiện.",
+    "city": "TP.HCM",
+    "fig-events": "dự án sự kiện ở vai trò điều phối hậu trường và lễ tân",
+    "fig-guests": "khách tại Destination Runway Fashion Week 2026",
+    "fig-delegates": "đại biểu, khách mời được check-in tại hội thảo quốc tế",
+    "fig-children": "trẻ em được hỗ trợ trong chương trình thiện nguyện",
+    "summary": "Sinh viên năm cuối ngành Quan hệ Công chúng (HUFLIT) với 03 dự án sự kiện thực tế ở vai trò điều phối hậu trường và lễ tân – từ fashion show đến hội thảo quốc tế của Bloomberg Businessweek Vietnam.",
+    "career-objective": "Mục tiêu nghề nghiệp",
+    "objective": "Ứng tuyển vị trí Thực tập sinh Tổ chức Sự kiện để tham gia trọn quy trình tiền kỳ – hiện trường – hậu kỳ trong môi trường agency bài bản. Mục tiêu 2 năm tới: trở thành Chuyên viên Sự kiện có khả năng quản trị rủi ro và trực tiếp vận hành các sự kiện, hội nghị quy mô lớn.",
+    "runway-role": "Điều phối hậu trường",
+    "runway-note": "Xuan Lan’s Academy · Fashion show, 300 - 500 khách",
+    "runway-points": "<li>Quản lý lịch makeup &amp; fitting cho 10 người mẫu; kiểm soát tiến độ theo từng slot giờ, bảo đảm 100% người mẫu có mặt tại cánh gà đúng thời điểm ra sàn.</li><li>Điều phối dàn người mẫu qua 4 buổi tập dợt và tổng duyệt: hướng dẫn đi đúng tuyến runway và đúng kịch bản, phối hợp trực tiếp với đạo diễn sân khấu, tổ ánh sáng và âm thanh.</li><li>Đối chiếu thứ tự trình diễn với line-up trang phục trước mỗi lượt ra sàn, hạn chế sai sót về thứ tự và trang phục trong suốt show.</li>",
+    "symposium-role": "Vận hành quầy check-in",
+    "symposium-note": "Bloomberg Businessweek Vietnam · Hội thảo quốc tế, 100 - 150 khách mời",
+    "symposium-points": "<li>Thực hiện quy trình check-in, đối chiếu thông tin và phát thẻ cho 150 đại biểu, khách mời; giữ luồng khách thông suốt trong giờ cao điểm.</li><li>Xử lý tại quầy các vấn đề phát sinh về vé mời và sai lệch thông tin đăng ký; chuyển các trường hợp chưa giải quyết được lên quản lý phụ trách.</li><li>Hướng dẫn đại biểu vào đúng khu vực hội thảo, phối hợp cùng tổ lễ tân 7 thành viên theo phân công khu vực.</li>",
+    "gala-name": "Gala Chào Xuân 2026 - “Mã Đáo Khai Xuân”",
+    "gala-role": "Cộng tác viên",
+    "gala-note": "Xuan Lan’s Academy · Fashion show, 300 - 400 khách",
+    "gala-points": "<li>Phụ trách chăm sóc và hộ tống 5 người mẫu VIP xuyên suốt quá trình tổng duyệt cho đến khi lên sân khấu.</li><li>Theo sát tiến độ trang điểm – thử đồ và cập nhật liên tục cho tổ điều phối, giúp chương trình chạy đúng rundown.</li><li>Xử lý linh hoạt các tình huống phát sinh tại hậu trường, ưu tiên hình ảnh và sự thoải mái của khách mời đặc biệt.</li>",
+    "activities-title": "Hoạt động cộng đồng",
+    "charity-name": "Chương trình thiện nguyện “Niềm vui cho em”",
+    "charity-role": "Thành viên Ban Tổ chức · Nhóm ETHER",
+    "charity-points": "<li><strong>Quy mô:</strong> Trực tiếp kết nối và trao quà, tổ chức hoạt động vui chơi cho hơn 40 trẻ em mồ côi/bị bỏ rơi tại mái ấm Minh Tâm (chùa Linh Sơn).</li><li><strong>Thực hiện:</strong> Điều phối 100% các trò chơi tương tác và không gian sinh hoạt, mang lại bầu không khí ấm áp cho các em nhỏ.</li>",
+    "teambuilding-role": "Thành viên Ban Tổ chức · Nhóm Grateful",
+    "teambuilding-points": "<li>Trực tiếp điều phối và vận hành chương trình gắn kết tập thể ngoài trời cho 15 thành viên phòng FIRC.</li><li>Quản lý tiến độ và trực tiếp điều hướng 4 hoạt động/trò chơi tương tác (Circle Connection, Relay Ball Passing, Ring Toss, Team Puzzle).</li>",
+    "sk-operations": "Vận hành sự kiện",
+    "sk-operations-tags": "<li>Điều phối hậu trường</li><li>Quản lý rundown</li><li>Kiểm soát tiến độ theo timeline</li>",
+    "sk-planning": "Lập kế hoạch",
+    "sk-planning-tags": "<li>Xây dựng kịch bản chương trình</li><li>Bố trí không gian</li><li>Sơ đồ layout</li>",
+    "sk-risk": "Quản trị rủi ro",
+    "sk-risk-tags": "<li>Lường trước tình huống phát sinh</li><li>Xử lý tại hiện trường</li>",
+    "sk-vip": "Đón tiếp khách VIP",
+    "sk-vip-tags": "<li>Check-in</li><li>Hộ tống</li><li>Chăm sóc khách mời đặc biệt</li>",
+    "sk-leadership": "Lãnh đạo",
+    "sk-leadership-tags": "<li>Quản lý nhóm</li><li>Lãnh đạo nhóm</li>",
+    "sk-software": "Phần mềm",
+    "sk-software-tags": "<li>CapCut</li><li>Canva</li><li>Công cụ AI cơ bản</li>",
+    "degree": "Quan hệ Công chúng, chuyên ngành Quản trị Sự kiện",
+    "school": "Trường Đại học Ngoại ngữ – Tin học TP.HCM (HUFLIT), 2023 - 2027",
+    "coursework": "Môn chuyên ngành nổi bật",
+    "coursework-points": "<li>Tổ chức sự kiện</li><li>Kỹ thuật Nhiếp ảnh – Quay phim</li><li>Quản trị khủng hoảng và xung đột</li>",
+    "lang-certs": "Ngoại ngữ &amp; chứng chỉ",
+    "languages": "Ngoại ngữ",
+    "certificates": "Chứng chỉ",
+    "updated": "Cập nhật tháng 11/2026",
+    "nav-aria": "Các mục",
+    "photo-alt": "Ảnh chân dung Serena Truong",
+    "lang-aria": "Ngôn ngữ"
+  };
+  const nodes = [...document.querySelectorAll("[data-i18n]")];
+  const read = n => n.dataset.i18nAttr ? n.getAttribute(n.dataset.i18nAttr) : n.innerHTML;
+  const en = new Map(nodes.map(n => [n, read(n)]));
+  const enTitle = document.title;
+  const buttons = document.querySelectorAll(".lang button");
+  const setLang = lang => {
+    const vi = lang === "vi";
+    document.documentElement.lang = lang;
+    document.title = vi ? VI.title : enTitle;
+    for (const n of nodes) {
+      const text = vi ? VI[n.dataset.i18n] ?? en.get(n) : en.get(n);
+      if (n.dataset.i18nAttr) n.setAttribute(n.dataset.i18nAttr, text);
+      else n.innerHTML = text;
+    }
+    for (const b of buttons) b.setAttribute("aria-pressed", b.dataset.lang === lang);
+  };
+  for (const b of buttons) b.addEventListener("click", () => {
+    setLang(b.dataset.lang);
+    try { localStorage.setItem("cv-lang", b.dataset.lang); } catch {}
+  });
+  let saved = new URLSearchParams(location.search).get("lang");
+  if (!saved) try { saved = localStorage.getItem("cv-lang"); } catch {}
+  if (saved === "vi") setLang("vi");
+})();
+</script>
+</body>
+</html>
