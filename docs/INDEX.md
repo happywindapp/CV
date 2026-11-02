@@ -7,6 +7,7 @@
 - [Project Context](../ai-context/project-context.md) — mục tiêu + kiến trúc high-level (đọc đầu tiên)
 - [Service Registry](services-registry.md) — danh sách service theo tier (single source, sinh từ manifest)
 - [Glossary](glossary.md) — thuật ngữ domain, viết tắt, tên riêng
+- [Quy trình build CV online](business/cv-build-workflow.md) — cấu trúc nguồn, build, design system, EN/VI, quy tắc nội dung, verify (đọc trước khi tạo/sửa CV)
 
 ## Danh mục tài liệu
 

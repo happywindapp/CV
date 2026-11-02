@@ -28,3 +28,5 @@
 - [scaffold-robocopy-copies-skill-junctions.md](scaffold-robocopy-copies-skill-junctions.md) — robocopy cần `/XJ` khi copy template
 
 - [headless-chrome-mobile-screenshot-needs-iframe.md](headless-chrome-mobile-screenshot-needs-iframe.md) — chụp layout mobile bằng Chrome headless phải qua wrapper iframe, `--window-size` nhỏ cho kết quả sai
+
+- [cv-rebuild-can-overwrite-user-commits.md](cv-rebuild-can-overwrite-user-commits.md) — trước khi build `cv_*.html` phải so với HEAD, user hay tự sửa/commit file output

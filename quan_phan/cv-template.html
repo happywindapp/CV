@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quan Phan (Wyndham) | Technical Architect</title>
+<meta name="description" content="Technical Architect with over 15 years designing and operating high-performance distributed systems, with cloud-native depth on AWS and GCP, blockchain and gaming.">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Quan Phan (Wyndham) | Technical Architect">
+<meta property="og:description" content="Cloud-native solutions on AWS and GCP, blockchain and high-performance systems.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f3f6f7;
+  --surface: #ffffff;
+  --text: #0f2129;
+  --muted: #4f626b;
+  --line: #dae3e6;
+  --accent: #0a7b70;
+  --accent-strong: #06625a;
+  --accent-soft: #e2f3f0;
+  --accent-text: #ffffff;
+  --hero-bg: #0a1c25;
+  --hero-text: #eef6f7;
+  --hero-muted: #a7bcc3;
+  --hero-accent: #5fd9c6;
+  --shadow: 0 1px 2px rgb(10 28 37 / 0.05), 0 10px 30px -14px rgb(10 28 37 / 0.22);
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a141a;
+    --surface: #101e26;
+    --text: #e4eef1;
+    --muted: #9cb0b7;
+    --line: #20333c;
+    --accent: #5fd9c6;
+    --accent-strong: #86e6d7;
+    --accent-soft: rgb(95 217 198 / 0.12);
+    --accent-text: #0a141a;
+    --hero-bg: #061017;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 12px 32px -16px rgb(0 0 0 / 0.6);
+  }
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 5rem; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+  .hero-inner > * { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+  .hero-inner > :last-child { animation-delay: 0.12s; }
+}
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Be Vietnam Pro", "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+h1, h2, h3, h4, h5, p, ul, dl, dd { margin: 0; }
+h1, h2, h3, h4, h5, strong, th, dt { font-weight: 600; }
+ul { padding: 0; list-style: none; }
+a { color: var(--accent); text-underline-offset: 0.18em; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+.wrap { width: 100%; max-width: 66rem; margin-inline: auto; padding-inline: 1.5rem; }
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--accent);
+  color: var(--accent-text);
+  border-radius: 8px;
+}
+.skip:focus { top: 0.75rem; z-index: 3; }
+
+.nav, .hero, footer {
+  color-scheme: dark;
+  --bg: var(--hero-bg);
+  --text: var(--hero-text);
+  --muted: var(--hero-muted);
+  --line: rgb(255 255 255 / 0.12);
+  --accent: var(--hero-accent);
+  --accent-text: var(--hero-bg);
+  color: var(--text);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: color-mix(in srgb, var(--hero-bg) 88%, transparent);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; gap: 1.5rem; height: 3.75rem; }
+.nav-name { font-weight: 600; margin-right: auto; color: var(--text); text-decoration: none; }
+.nav-links { display: flex; gap: 1.25rem; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9375rem; transition: color 0.15s ease; }
+.nav-links a:hover { color: var(--accent); }
+
+.btn {
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 0.375rem 0.875rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn:active { transform: translateY(1px); }
+
+.lang { display: flex; padding: 2px; border: 1px solid var(--accent); border-radius: 8px; background: color-mix(in srgb, var(--accent) 10%, var(--bg)); }
+.lang button { border: 0; border-radius: 6px; background: none; color: var(--accent); font: inherit; font-size: 0.8125rem; font-weight: 600; line-height: 1.5; padding: 0.125rem 0.5rem; cursor: pointer; }
+.lang button:hover { background: color-mix(in srgb, var(--accent) 22%, var(--bg)); }
+.lang button[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); }
+
+.hero { position: relative; isolation: isolate; overflow: hidden; background: var(--hero-bg); }
+.hero::before, .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; }
+.hero::before {
+  background:
+    radial-gradient(42rem 26rem at 88% 0%, rgb(95 217 198 / 0.26), transparent 70%),
+    radial-gradient(34rem 22rem at 0% 100%, rgb(42 128 168 / 0.3), transparent 70%);
+}
+.hero::after {
+  background-image: radial-gradient(rgb(255 255 255 / 0.09) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(to bottom, #000, transparent 85%);
+  mask-image: linear-gradient(to bottom, #000, transparent 85%);
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 3rem;
+  align-items: center;
+  padding-block: 4.5rem 8rem;
+}
+.hero h1 { font-size: clamp(2.75rem, 6.5vw, 4.25rem); line-height: 1.05; letter-spacing: -0.035em; }
+.role-title { margin-top: 0.875rem; font-size: 1.375rem; font-weight: 600; line-height: 1.3; color: var(--accent); }
+.tagline { margin-top: 0.5rem; max-width: 36rem; color: var(--muted); font-size: 1.0625rem; }
+.contact { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; font-size: 0.875rem; }
+.contact li { padding: 0.3125rem 0.875rem; border: 1px solid var(--line); border-radius: 999px; background: rgb(255 255 255 / 0.04); }
+.contact a { color: var(--text); text-decoration: none; }
+.contact a:hover { color: var(--accent); }
+.photo {
+  display: block;
+  width: 12.5rem;
+  height: 12.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px var(--hero-bg), 0 0 0 7px var(--accent), 0 24px 60px -20px rgb(95 217 198 / 0.45);
+}
+
+.figures { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: -4.5rem; }
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 1.25rem 1.375rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.figure dt { order: 2; font-weight: 400; font-size: 0.875rem; line-height: 1.45; color: var(--muted); }
+.figure dd { order: 1; font-size: 2.25rem; font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; color: var(--accent); }
+
+main { counter-reset: section; }
+section { padding-block: 4.5rem 0; }
+section > h2 { display: flex; align-items: center; gap: 0.875rem; white-space: nowrap; font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 2rem; }
+section > h2::before {
+  counter-increment: section;
+  content: "0" counter(section);
+  padding: 0.125rem 0.5rem;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 1rem;
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+}
+section > h2::after { content: ""; flex: 0 1 14rem; height: 1px; background: var(--line); }
+
+.about { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 3rem; }
+.about-main { font-size: 1.0625rem; }
+.about-main p + p { margin-top: 1rem; }
+.goal {
+  align-self: start;
+  padding: 1.5rem 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.goal h3 { margin-bottom: 0.375rem; font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.goal .interests { margin-top: 1.25rem; }
+
+.job { position: relative; display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 0 2.5rem; padding-bottom: 1.5rem; }
+.job::before { content: ""; position: absolute; left: calc(8.5rem + 1.25rem - 1px); top: 0; bottom: 0; width: 2px; background: var(--line); }
+.job:last-of-type::before { bottom: calc(100% - 2rem); }
+.job::after {
+  content: "";
+  position: absolute;
+  left: calc(8.5rem + 1.25rem - 7px);
+  top: 1.6rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 3px solid var(--accent);
+}
+.job:first-of-type::after { background: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft); }
+.when { color: var(--muted); font-size: 0.875rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.job > .when { padding-top: 1.35rem; text-align: right; font-weight: 600; color: var(--accent); }
+.job > div {
+  padding: 1.5rem 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.job > div:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
+.job h3 { font-size: 1.25rem; line-height: 1.35; }
+.org { font-weight: 600; color: var(--accent); }
+.org a { color: inherit; text-decoration: none; }
+.org a:hover { text-decoration: underline; }
+.note { margin-top: 0.375rem; color: var(--muted); font-size: 0.9375rem; }
+.points { margin-top: 0.875rem; }
+.points li { position: relative; padding-left: 1.125rem; margin-top: 0.4375rem; }
+.points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+.sub { margin-top: 1.125rem; font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.sub + .points { margin-top: 0.25rem; }
+.stack { margin-top: 1.125rem; padding-top: 1rem; border-top: 1px dashed var(--line); }
+.stack > strong { display: block; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-top: 0.5rem; }
+.tags li { padding: 0.0625rem 0.625rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: 0.8125rem; font-weight: 600; line-height: 1.7; }
+.tags-outline li { border: 1px solid var(--line); background: none; color: var(--text); font-weight: 400; }
+
+.roles { margin-top: 1.25rem; border-left: 2px solid var(--line); }
+.role { position: relative; padding: 0 0 1.5rem 1.375rem; }
+.role:last-child { padding-bottom: 0; }
+.role::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  top: 0.5em;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--surface);
+}
+.role-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.role h4 { font-size: 1.0625rem; line-height: 1.5; }
+.role-head .when { padding: 0.0625rem 0.5rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; font-size: 0.8125rem; }
+
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.skills > div {
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: border-color 0.2s ease;
+}
+.skills > div:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
+.skills dt { display: flex; align-items: center; gap: 0.5rem; font-size: 1.0625rem; }
+.skills dt::before { content: ""; width: 0.5rem; height: 1.125rem; border-radius: 2px; background: var(--accent); }
+.skills .tags { margin-top: 0.75rem; }
+
+.degrees { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.degrees > div {
+  padding: 1.5rem 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.degrees h3 { font-size: 1.125rem; line-height: 1.35; }
+.degrees .note { margin-top: 0.25rem; }
+.degrees .points { font-size: 0.9375rem; }
+.degrees h3 a, tbody th a { color: var(--text); text-decoration: none; }
+.degrees h3 a:hover, tbody th a:hover { color: var(--accent); text-decoration: underline; }
+.degrees h3 a::after, tbody th a::after { content: " \2197"; color: var(--accent); font-weight: 600; }
+
+.certs-title { margin-top: 3rem; font-size: 1.25rem; line-height: 1.35; }
+.certs-note { margin-top: 0.25rem; color: var(--muted); font-size: 0.9375rem; }
+table {
+  width: 100%;
+  margin-top: 1.25rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  font-size: 0.9375rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+caption { position: absolute; left: -9999px; }
+th { text-align: left; }
+th, td { padding: 0.75rem 1.25rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { background: var(--accent-soft); color: var(--accent-strong); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+tbody tr:last-child > * { border-bottom: 0; }
+tbody th { font-weight: 600; }
+tbody tr { transition: background-color 0.15s ease; }
+tbody tr:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+tbody td:nth-of-type(2) { font-weight: 600; color: var(--accent); }
+.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.other-certs { margin-top: 1.5rem; }
+
+footer { margin-top: 5rem; padding-block: 2rem 2.5rem; background: var(--hero-bg); color: var(--muted); font-size: 0.9375rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 2rem; }
+
+@media screen and (max-width: 47.99rem) {
+  .nav-name { display: none; }
+  .nav .wrap { justify-content: space-between; gap: 0.75rem; }
+  .nav-links { gap: 0.875rem; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+  .nav-links a { font-size: 0.875rem; white-space: nowrap; }
+  .btn { font-size: 0.875rem; padding: 0.3125rem 0.625rem; }
+  .hero-inner { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; padding-block: 2.75rem 6rem; }
+  .contact { font-size: 0.8125rem; }
+  .contact li { padding-inline: 0.625rem; overflow-wrap: anywhere; }
+  .photo { order: -1; width: 7.5rem; height: 7.5rem; }
+  .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; margin-top: -3.5rem; }
+  .figure { padding: 1rem; }
+  .figure dd { font-size: 1.875rem; }
+  section { padding-top: 3.25rem; }
+  section > h2 { font-size: 1.5rem; }
+  .about, .skills, .degrees { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .about { gap: 1.5rem; }
+  .job { grid-template-columns: minmax(0, 1fr); padding-left: 1.5rem; }
+  .job::before { left: 6px; }
+  .job::after { left: 0; top: 0.3rem; }
+  .job > .when { padding: 0 0 0.5rem; text-align: left; }
+  .job > div, .goal, .degrees > div { padding: 1.25rem; }
+  .role-head { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+  thead { position: absolute; left: -9999px; }
+  table, tbody, tr, tbody th { display: block; }
+  tr { padding: 0.875rem 1.25rem; border-bottom: 1px solid var(--line); }
+  tbody tr:last-child { border-bottom: 0; }
+  tbody th, td { padding: 0; border: 0; }
+  td[data-label] { display: inline-block; margin-right: 0.875rem; color: var(--muted); }
+  td[data-label]::before { content: attr(data-label) " "; }
+}
+
+@media screen and (max-width: 25.99rem) {
+  .btn { display: none; }
+}
+
+@page { size: A4; margin: 13mm 14mm; }
+@media print {
+  :root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --text: #0f2129;
+    --muted: #4f626b;
+    --line: #d5dde0;
+    --accent: #0a7b70;
+    --accent-strong: #06625a;
+    --accent-soft: #e8f4f2;
+    --accent-text: #ffffff;
+    --hero-bg: #ffffff;
+    --hero-text: #0f2129;
+    --hero-muted: #4f626b;
+    --hero-accent: #0a7b70;
+    --shadow: none;
+  }
+  .hero, footer { color-scheme: light; --line: #d5dde0; }
+  html { font-size: 12.5px; scroll-behavior: auto; }
+  body { line-height: 1.5; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .nav, .skip, .hero::before, .hero::after, .job::before, .job::after { display: none; }
+  .wrap { max-width: none; padding-inline: 0; }
+  a { color: inherit; text-decoration: none; }
+  .degrees h3 a::after, tbody th a::after { content: none; }
+  .hero-inner > * { animation: none; }
+  .hero-inner { padding-block: 0 1.25rem; gap: 2rem; }
+  .photo { width: 7.5rem; height: 7.5rem; box-shadow: none; }
+  .figures { margin-top: 0; }
+  .job { grid-template-columns: 6.5rem minmax(0, 1fr); gap: 0 1.25rem; padding-bottom: 1rem; }
+  .job > .when { padding-top: 1rem; }
+  .job > div, .goal, .skills > div, .degrees > div { padding: 0.875rem 1.125rem; }
+  .figure { padding: 0.875rem 1rem; }
+  .skills, .degrees, .figures { gap: 0.625rem; }
+  section { padding-top: 1.75rem; }
+  section > h2 { margin-bottom: 1rem; break-after: avoid; }
+  h3, h4, .role-head, .certs-title { break-after: avoid; }
+  li, .skills > div, .degrees > div, .figure, table, .stack { break-inside: avoid; }
+  .job > div > .note, .certs-note { break-after: avoid; }
+  .about { gap: 2rem; }
+  footer { margin-top: 1.75rem; padding-block: 0.75rem 0; border-top: 1px solid var(--line); }
+}
+</style>
+<style>
+{{FONT_CSS}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip-to-content">Skip to content</a>
+
+<nav class="nav" aria-label="Sections" data-i18n="nav-aria" data-i18n-attr="aria-label">
+  <div class="wrap">
+    <a class="nav-name" href="#top" data-i18n="quan-phan">Quan Phan (Wyndham)</a>
+    <div class="nav-links">
+      <a href="#about" data-i18n="about">About</a>
+      <a href="#experience" data-i18n="experience">Experience</a>
+      <a href="#skills" data-i18n="skills">Skills</a>
+      <a href="#education" data-i18n="education">Education</a>
+    </div>
+    <div class="lang" role="group" aria-label="Language" data-i18n="lang-aria" data-i18n-attr="aria-label">
+      <button type="button" lang="en" aria-pressed="true" data-lang="en">EN</button>
+      <button type="button" lang="vi" aria-pressed="false" data-lang="vi">VI</button>
+    </div>
+    <button class="btn" type="button" onclick="window.print()" data-i18n="save-pdf">Save PDF</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-inner">
+    <div>
+      <h1 data-i18n="quan-phan">Quan Phan (Wyndham)</h1>
+      <p class="role-title">Technical Architect</p>
+      <p class="tagline" data-i18n="cloud-native-solutions-on">Cloud-native solutions on AWS and GCP, blockchain and high-performance systems.</p>
+      <ul class="contact">
+        <li><a href="mailto:quan.phanngocminh.111@gmail.com">quan.phanngocminh.111@gmail.com</a></li>
+        <li>0909 54****</li>
+        <li><a href="https://www.linkedin.com/in/phanquan111">linkedin.com/in/phanquan111</a></li>
+        <li><a href="https://github.com/happywindapp/web_tool">github.com/happywindapp/web_tool</a></li>
+        <li><a href="https://happywindapp.github.io/web_tool/index.html" data-i18n="personal-project">Personal project: Web Tools</a></li>
+      </ul>
+    </div>
+    <img class="photo" width="250" height="250" alt="Portrait of Quan Phan" data-i18n="photo-alt" data-i18n-attr="alt" src="{{PHOTO}}">
+  </div>
+</header>
+
+<div class="wrap">
+
+  <main id="main">
+  <dl class="figures">
+    <div class="figure"><dt data-i18n="years-designing-and-operating">years designing and operating distributed systems</dt><dd>15+</dd></div>
+    <div class="figure"><dt data-i18n="users-served-globally">users on systems designed and worked on</dt><dd>10M+</dd></div>
+    <div class="figure"><dt data-i18n="services-in-a-shipping">microservices in a logistics system, as Technical Architect</dt><dd>50+</dd></div>
+    <div class="figure"><dt data-i18n="awards-blockchain-metain">awards for a complex blockchain system at Metain</dt><dd>5</dd></div>
+  </dl>
+
+    <section id="about">
+      <h2 data-i18n="about">About</h2>
+      <div class="about">
+        <div class="about-main">
+          <p data-i18n="technical-architect-with-over">Technical Architect with over 15 years of in-depth experience designing and operating high-performance distributed systems. Strategic focus on transforming monolithic systems into microservices on cloud-native platforms (AWS, GCP), optimizing operating costs and enhancing scalability.</p>
+          <p data-i18n="expert-in-blockchain-defi">Expert in blockchain (DeFi, smart contracts) and gaming, having designed infrastructure serving over 10 million users globally. Experienced in leading cross-functional R&amp;D teams, guiding technology roadmaps and ensuring security for large-scale financial transactions.</p>
+          <p data-i18n="strong-in-planning-organization">Strong in planning, organization, presentation and communication. Professional, effective and creative.</p>
+        </div>
+        <div class="goal">
+          <h3 data-i18n="career-objective">Career objective</h3>
+          <p data-i18n="aiming-for-the-role">Aiming for the role of Enterprise Architect, connecting business strategy to platform architecture so that systems meet security, reliability, compliance and delivery speed requirements.</p>
+          <h3 class="interests" data-i18n="interests">Interests</h3>
+          <p data-i18n="reading-learning-traveling">Reading, learning, traveling</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 data-i18n="experience">Experience</h2>
+
+      <article class="job">
+        <p class="when" data-i18n="2026-present">2026 - Present</p>
+        <div>
+          <h3>Full Stack Developer</h3>
+          <p class="org"><a href="https://www.hsc.com.vn/">HSC</a></p>
+          <p class="note" data-i18n="one-of-vietnam-s">One of Vietnam's leading securities firms and investment banks, founded in 2003.</p>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="when">2023 - 2026</p>
+        <div>
+          <h3>Technical Architect</h3>
+          <p class="org"><a href="https://cyberlogitec.com.vn/">CyberLogitec</a></p>
+          <p class="note" data-i18n="it-solutions-for-shipping">IT solutions for shipping, terminal and forwarding, delivered to global customers across 10+ countries.</p>
+          <ul class="points">
+            <li data-i18n="led-the-design-and">Led the design and implementation of a cloud-native architecture on <strong>Google Cloud Platform</strong>, using <strong>Kubernetes (GKE)</strong> to orchestrate containers and auto-scale through surges in data.</li>
+            <li data-i18n="optimized-the-logistics-data">Optimized the logistics data retrieval system by restructuring complex <strong>PostgreSQL</strong> queries, reducing API latency and improving the end-user experience.</li>
+            <li data-i18n="established-a-standardized-ci">Established a standardized <strong>CI/CD</strong> process with <strong>ArgoCD</strong> and <strong>GitHub Actions</strong>, shortening the deployment cycle from several hours to 15 minutes and reducing manual errors by 90%.</li>
+            <li data-i18n="guided-technical-solutions-and">Guided technical solutions and mentored a team of 5 engineers, built a rigorous code review culture and applied <strong>Domain-Driven Design</strong> to complex logistics problems.</li>
+            <li data-i18n="applied-the-owasp-top">Applied the <strong>OWASP Top 10</strong> and <strong>SANS/CWE Top 25</strong> to guide secure coding, review and hardening, especially for authentication and authorization, injection, misconfiguration and sensitive data exposure.</li>
+          </ul>
+          <div class="stack"><strong data-i18n="stack">Stack</strong><ul class="tags"><li>Node.js</li><li>React.js</li><li>Next.js</li><li>NestJS</li><li>PostgreSQL</li><li>REST APIs</li><li>Linux</li><li>Docker</li></ul></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="when">2023</p>
+        <div>
+          <h3>Full Stack Developer</h3>
+          <p class="org">Mercantile Bank International</p>
+          <p class="note" data-i18n="us-bank-with-global">US bank with global access, offering progressive financial services and premium client care.</p>
+          <ul class="points">
+            <li data-i18n="developed-a-banking-system">Developed a banking system of 40+ microservices (account, billing, coupon, wallet, balance, assets, user, settings and more) with GraphQL, MongoDB, Node.js and TypeScript.</li>
+            <li data-i18n="developed-the-admin-web">Developed the admin web app with Angular.</li>
+            <li data-i18n="developed-the-client-web">Developed the client web app with React.</li>
+          </ul>
+          <div class="stack"><strong data-i18n="stack">Stack</strong><ul class="tags"><li>Node.js</li><li>TypeScript</li><li>React.js</li><li>Angular</li><li>MongoDB</li><li>REST APIs</li><li>GraphQL</li><li>Linux</li><li>HTML</li><li>CSS</li><li>RabbitMQ</li><li>Docker</li></ul></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="when">2022 - 2023</p>
+        <div>
+          <h3>Full Stack Developer</h3>
+          <p class="org">Metain</p>
+          <p class="note" data-i18n="blockchain-platform-defi-nft">Blockchain platform (DeFi, NFT, smart contracts) making investment in income-producing real estate affordable, transparent and safe.</p>
+          <ul class="points">
+            <li data-i18n="developed-a-multi-chain">Developed a multi-chain custodial wallet system supporting Bitcoin and Ethereum, with multi-sig security and key management on <strong>AWS KMS</strong>.</li>
+            <li data-i18n="built-a-serverless-backend">Built a serverless backend with <strong>AWS Lambda</strong> and <strong>Terraform</strong> (IaC), optimizing operating costs by up to 30% for off-chain services (KYC, notification).</li>
+            <li data-i18n="built-microservices-for-email">Built microservices for email, customer identification, referral program, NFT purchase, gaming and more.</li>
+          </ul>
+          <h4 class="sub" data-i18n="awards">Awards</h4>
+          <ul class="points">
+            <li data-i18n="1st-crowpitch-winner-vietnam">1st CrowPitch Winner, Vietnam Innovation Summit 2022</li>
+            <li data-i18n="top-3-international-startup">Top 3 International Startup, Ignite Fusion 2022</li>
+            <li data-i18n="top-5-finalists-vietnam">Top 5 Finalists, Vietnam startups</li>
+            <li data-i18n="top-15-startups-x">Top 15 startups, X-Pitch 2022</li>
+            <li data-i18n="3rd-place-solana-vietnam">3rd Place, Solana Vietnam Coding Camp Season 2</li>
+          </ul>
+          <div class="stack"><strong data-i18n="stack">Stack</strong><ul class="tags"><li>Node.js</li><li>JavaScript</li><li>TypeScript</li><li>React.js</li><li>MongoDB</li><li>REST APIs</li><li>Linux</li><li>HTML</li><li>AWS (Lambda, EC2, S3, Terraform, Cognito, CloudWatch)</li><li>Docker</li><li>Web3</li><li>Blockchain</li><li>Solidity</li></ul></div>
+        </div>
+      </article>
+
+      <article class="job">
+        <p class="when">2010 - 2022</p>
+        <div>
+          <h3>Gameloft Vietnam</h3>
+          <p class="org"><a href="https://www.gameloft.com/">gameloft.com</a></p>
+          <p class="note" data-i18n="twelve-years-from-mobile">Twelve years, from Mobile Developer to Technical Leader of the R&amp;D team.</p>
+          <div class="roles">
+            <div class="role">
+              <div class="role-head"><h4 data-i18n="technical-leader-r-d">Technical Leader, R&amp;D team</h4><p class="when">2021 - 2022</p></div>
+              <ul class="points">
+                <li data-i18n="researched-new-technology-and">Researched new technology and platforms to help other teams improve game and server development: blockchain technology, Cocos Creator, Roblox.</li>
+              </ul>
+              <div class="stack"><strong data-i18n="stack">Stack</strong><ul class="tags"><li>Node.js</li><li>JavaScript</li><li>TypeScript</li><li>React.js</li><li>REST APIs</li><li>HTML</li><li>Blockchain</li><li>Cocos Creator</li><li>Roblox</li></ul></div>
+            </div>
+            <div class="role">
+              <div class="role-head"><h4>Senior Backend Developer</h4><p class="when">2019 - 2021</p></div>
+              <ul class="points">
+                <li data-i18n="part-of-the-team">Part of the team that built the backend for all game projects of the Gameloft for Brands division, including the Applaydu family (10M+ downloads).</li>
+                <li data-i18n="applaydu-friends-is-available">Applaydu &amp; Friends is available on <a href="https://play.google.com/store/apps/details?id=com.ferrero.applayduGP">Google Play</a> and the <a href="https://apps.apple.com/lv/app/applaydu-friends-game/id1552397453">App Store</a>.</li>
+              </ul>
+              <div class="stack"><strong data-i18n="stack">Stack</strong><ul class="tags"><li>Node.js</li><li>JavaScript</li><li>TypeScript</li><li>React.js</li><li>REST APIs</li><li>HTML</li><li>DynamoDB</li><li>AWS (Lambda, EC2, S3, Terraform, Cognito, CloudWatch)</li></ul></div>
+            </div>
+            <div class="role">
+              <div class="role-head"><h4 data-i18n="programmer-supervisor-r-d">Programmer Supervisor, R&amp;D team</h4><p class="when">2014 - 2019</p></div>
+              <h5 class="sub" data-i18n="responsibilities">Responsibilities</h5>
+              <ul class="points">
+                <li data-i18n="managed-and-mentored-a">Managed and mentored a development team of 6+ members: assigned tasks and monitored progress, productivity and output quality.</li>
+                <li data-i18n="served-as-the-technical">Served as the technical point of contact, advising on features, design and architecture.</li>
+                <li data-i18n="collaborated-with-qa-game">Collaborated with QA, game designers, developers and multinational production and e-commerce teams (India, Vietnam, Mexico, Canada, EU) to ensure on-time delivery.</li>
+                <li data-i18n="proposed-and-implemented-cost">Proposed and implemented cost-effective technical solutions to improve product performance and stability.</li>
+              </ul>
+              <h5 class="sub" data-i18n="achievements">Achievements</h5>
+              <ul class="points">
+                <li data-i18n="developed-payment-features-sfr">Developed payment features: SFR Billing, Freecharge Billing, PayTM Billing.</li>
+                <li data-i18n="implemented-unlock-payment-tracking">Implemented unlock, payment, tracking and ads features for 2D and HD+ games using C++ and native C.</li>
+                <li data-i18n="designed-and-built-the">Designed and built the Gameloft e-commerce app store architecture: credit card and PayPal payments, subscriptions, user behavior tracking (GCM) and multi-screen support (flexible layouts, 9-patch).</li>
+                <li data-i18n="applied-security-algorithms-md5">Applied security algorithms: MD5, DES, AES, RSA.</li>
+              </ul>
+              <div class="stack"><strong data-i18n="stack">Stack</strong><ul class="tags"><li>Android Development</li><li>JavaScript</li><li>Java</li><li>Mobile Payments</li><li>Mobile Technology</li><li>PHP</li><li>C++</li><li>.NET Framework</li><li>C#</li></ul></div>
+            </div>
+            <div class="role">
+              <div class="role-head"><h4>Senior Developer</h4><p class="when">2011 - 2014</p></div>
+              <ul class="points">
+                <li data-i18n="supported-and-mentored-the">Supported and mentored the team on technical issues, acting as technical advisor for complex cases.</li>
+                <li data-i18n="investigated-and-resolved-errors">Investigated and resolved errors on real devices and optimized performance and memory for a stable user experience.</li>
+                <li data-i18n="helped-the-sms-billing">Helped the SMS billing system work in over 200 countries.</li>
+                <li data-i18n="developed-a-payment-system">Developed a payment system on the J2ME, Android and BlackBerry platforms.</li>
+              </ul>
+            </div>
+            <div class="role">
+              <div class="role-head"><h4>Mobile Developer</h4><p class="when">2010 - 2011</p></div>
+              <ul class="points">
+                <li data-i18n="main-developer-for-the">Main developer for the UnlockTnB tools, turning product team requirements into billing tool features.</li>
+                <li data-i18n="developed-sms-billing-http">Developed SMS billing, HTTP billing and TP billing for UnlockTnB projects.</li>
+                <li data-i18n="helped-the-sms-billing-2">Helped the SMS billing system work in over 50 countries.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2 data-i18n="skills">Skills</h2>
+      <dl class="skills">
+        <div><dt data-i18n="architecture">Architecture</dt><dd><ul class="tags tags-outline"><li>Solution Architecture</li><li>Cloud-Native Architecture</li><li>Application and System Architecture</li><li>Security</li><li>Microservices</li><li>Domain-Driven Design (Bounded Context, Entities, Aggregates)</li></ul></dd></div>
+        <div><dt data-i18n="cloud-and-devops">Cloud and DevOps</dt><dd><ul class="tags tags-outline"><li>AWS (EC2, Lambda, DynamoDB, S3)</li><li>GCP (Kubernetes, AlloyDB, Secret Manager)</li><li>Docker</li><li>Terraform</li><li>ArgoCD</li><li>GitHub Actions</li><li>CI/CD</li><li>Datadog</li><li>Linux (CLI, networking, monitoring)</li></ul></dd></div>
+        <div><dt>Backend</dt><dd><ul class="tags tags-outline"><li>Node.js</li><li>NestJS</li><li>TypeScript</li><li>JavaScript (ES6, asynchronous, OOP, events)</li><li>GraphQL</li><li>REST APIs</li><li>RabbitMQ</li><li>Kafka</li></ul></dd></div>
+        <div><dt>Frontend</dt><dd><ul class="tags tags-outline"><li>React</li><li>Next.js</li><li>Angular</li><li>HTML</li><li>CSS</li><li>Bootstrap</li></ul></dd></div>
+        <div><dt data-i18n="databases">Databases</dt><dd><ul class="tags tags-outline"><li>SQL</li><li>NoSQL</li><li>PostgreSQL</li><li>MongoDB</li><li>DynamoDB</li><li>AlloyDB</li></ul></dd></div>
+        <div><dt data-i18n="ai-and-data-science">AI and data science</dt><dd><ul class="tags tags-outline"><li>Machine Learning (Decision Trees, SVM, Deep Learning)</li><li>NLP</li><li>Big Data</li><li>Data Analysis</li><li>Data Manipulation</li><li>Visualization</li><li>Python</li></ul></dd></div>
+        <div><dt>Blockchain</dt><dd><ul class="tags tags-outline"><li>Ethereum</li><li>Solidity</li><li>Web3</li><li>DeFi</li><li>Smart Contracts</li></ul></dd></div>
+        <div><dt data-i18n="mobile-and-game">Mobile and game</dt><dd><ul class="tags tags-outline"><li>Android (Firebase, security and permissions)</li><li>Java (J2ME, OOP, collections, multithreading)</li><li>Unity</li><li>2D graphics</li><li>optimization</li><li>C/C++ (memory management, pointers, OOP)</li></ul></dd></div>
+      </dl>
+    </section>
+
+    <section id="education">
+      <h2 data-i18n="education">Education</h2>
+      <div class="degrees">
+        <div>
+          <h3><a href="quan_phan/degree/bang_thac_sy.jpg" target="_blank" rel="noopener" data-i18n="master-of-science-in">Master of Science in Computer Science</a></h3>
+          <p class="note" data-i18n="university-of-information-technology">University of Information Technology, VNU-HCM, 2017</p>
+          <h4 class="sub" data-i18n="accomplishments">Accomplishments</h4>
+          <ul class="points">
+            <li data-i18n="grid-computing-performance-on">Grid computing performance on the .NET platform</li>
+            <li data-i18n="natural-language-processing-nlp">Natural Language Processing (NLP) for Vietnamese</li>
+            <li data-i18n="time-database-and-nosql">Time database and NoSQL with MongoDB for online games</li>
+            <li data-i18n="neural-algorithms-for-handwriting">Neural algorithms for handwriting recognition</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="bachelor-s-degree-in">Bachelor's degree in Information Technology</h3>
+          <p class="note" data-i18n="posts-and-telecommunications-institute">Posts and Telecommunications Institute of Technology, 2009</p>
+          <h4 class="sub" data-i18n="accomplishments">Accomplishments</h4>
+          <ul class="points">
+            <li data-i18n="network-management-with-cacti">Network management with Cacti</li>
+            <li data-i18n="graphics-algorithms-for-building">Graphics algorithms for building 2D and 3D applications</li>
+            <li data-i18n="developing-software-with-the">Developing software with the Task Parallel Library on .NET</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="certs-title" data-i18n="certificates">Certificates</h3>
+      <p class="certs-note" data-i18n="computer-science-center-university">Computer Science Center, University of Science, VNU-HCM. Issued to Phan Ngọc Minh Quân. Check any code at <a href="https://verify.csc.edu.vn/">verify.csc.edu.vn</a>.</p>
+      <table>
+        <caption data-i18n="certificates-with-year-score">Certificates with year, score out of 10 and verification code</caption>
+        <thead>
+          <tr><th scope="col" data-i18n="course">Course</th><th scope="col" data-i18n="period">Period</th><th scope="col" data-i18n="score">Score</th><th scope="col" data-i18n="code">Code</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row"><a href="quan_phan/certificate/DevOps_CICD.pdf" target="_blank" rel="noopener">DevOps Automation with CI/CD</a></th><td class="num" data-label="Period">2026</td><td class="num" data-label="Score">10.0</td><td class="num" data-label="Code">1468214</td></tr>
+          <tr><th scope="row"><a href="quan_phan/certificate/Machine%20Learning%20with%20Python.pdf" target="_blank" rel="noopener">Machine Learning with Python</a></th><td class="num" data-label="Period">2026</td><td class="num" data-label="Score">9.5</td><td class="num" data-label="Code">1452308</td></tr>
+          <tr><th scope="row"><a href="quan_phan/certificate/Big%20Data%20in%20Machine%20Learning.pdf" target="_blank" rel="noopener">Big Data in Machine Learning</a></th><td class="num" data-label="Period">2026</td><td class="num" data-label="Score">10.0</td><td class="num" data-label="Code">1451640</td></tr>
+          <tr><th scope="row"><a href="quan_phan/certificate/Data%20Pre-processing%20and%20Analysis.pdf" target="_blank" rel="noopener">Data Pre-processing and Analysis</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">9.0</td><td class="num" data-label="Code">1424677</td></tr>
+          <tr><th scope="row"><a href="quan_phan/certificate/Database%20SQL%20and%20Data%20Collection%20for%20Data%20Science.pdf" target="_blank" rel="noopener">Database SQL and Data Collection for Data Science</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">8.5</td><td class="num" data-label="Code">1403000</td></tr>
+          <tr><th scope="row"><a href="quan_phan/certificate/Data%20Manipulation%20and%20Data%20Visualization%20with%20Python.pdf" target="_blank" rel="noopener">Data Manipulation and Data Visualization with Python</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">10.0</td><td class="num" data-label="Code">1402969</td></tr>
+          <tr><th scope="row"><a href="quan_phan/certificate/Fundamentals%20of%20Python.pdf" target="_blank" rel="noopener">Fundamentals of Python</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">9.5</td><td class="num" data-label="Code">1390856</td></tr>
+          <tr><th scope="row"><a href="quan_phan/certificate/Bootstrap%2C%20PHP%2C%20MVC%2C%20Laravel%20Framework.pdf" target="_blank" rel="noopener">Bootstrap, PHP, MVC, Laravel Framework</a></th><td class="num" data-label="Period">2019</td><td class="num" data-label="Score">8.5</td><td class="num" data-label="Code">237333</td></tr>
+        </tbody>
+      </table>
+      <ul class="points other-certs">
+        <li>Udemy: Ethereum and Solidity: The Complete Developer's Guide</li>
+        <li>Udemy: The Complete Full-Stack Web Development Bootcamp</li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p data-i18n="references-available-on-request">References available on request.</p>
+    <p data-i18n="updated-november-2026">Updated November 2026</p>
+  </div>
+</footer>
+<script>
+(() => {
+  const VI = {
+    "title": "Phan Ngọc Minh Quân | Technical Architect",
+    "skip-to-content": "Bỏ qua đến nội dung",
+    "quan-phan": "Phan Ngọc Minh Quân",
+    "about": "Giới thiệu",
+    "experience": "Kinh nghiệm",
+    "skills": "Kỹ năng",
+    "education": "Học vấn",
+    "save-pdf": "Lưu PDF",
+    "cloud-native-solutions-on": "Giải pháp cloud-native trên AWS và GCP, blockchain và hệ thống hiệu năng cao.",
+    "personal-project": "Dự án cá nhân: Web Tools",
+    "years-designing-and-operating": "năm thiết kế và vận hành hệ thống phân tán",
+    "users-served-globally": "người dùng trên các hệ thống từng thiết kế và tham gia phát triển",
+    "services-in-a-shipping": "microservice trong hệ thống logistics, vai trò Technical Architect",
+    "awards-blockchain-metain": "giải thưởng cho hệ thống blockchain phức tạp tại Metain",
+    "technical-architect-with-over": "Technical Architect với hơn 15 năm kinh nghiệm chuyên sâu trong thiết kế và vận hành hệ thống phân tán hiệu năng cao. Tập trung chiến lược vào chuyển đổi hệ thống monolithic sang microservices trên nền tảng cloud-native (AWS, GCP), tối ưu chi phí vận hành và nâng cao khả năng mở rộng.",
+    "expert-in-blockchain-defi": "Chuyên sâu về blockchain (DeFi, smart contract) và game, từng thiết kế hạ tầng phục vụ hơn 10 triệu người dùng toàn cầu. Có kinh nghiệm dẫn dắt các nhóm R&amp;D đa chức năng, định hướng lộ trình công nghệ và đảm bảo an toàn cho các giao dịch tài chính quy mô lớn.",
+    "strong-in-planning-organization": "Mạnh về lập kế hoạch, tổ chức, thuyết trình và giao tiếp. Chuyên nghiệp, hiệu quả và sáng tạo.",
+    "career-objective": "Mục tiêu nghề nghiệp",
+    "aiming-for-the-role": "Hướng tới vai trò Enterprise Architect, kết nối chiến lược kinh doanh với kiến trúc nền tảng để hệ thống đáp ứng các yêu cầu về bảo mật, độ tin cậy, tuân thủ và tốc độ triển khai.",
+    "interests": "Sở thích",
+    "reading-learning-traveling": "Đọc sách, học hỏi, du lịch",
+    "2026-present": "2026 - Nay",
+    "one-of-vietnam-s": "Một trong những công ty chứng khoán và ngân hàng đầu tư hàng đầu Việt Nam, thành lập năm 2003.",
+    "it-solutions-for-shipping": "Giải pháp CNTT cho vận tải biển, cảng và giao nhận, phục vụ khách hàng toàn cầu tại hơn 10 quốc gia.",
+    "led-the-design-and": "Dẫn dắt thiết kế và triển khai kiến trúc cloud-native trên <strong>Google Cloud Platform</strong>, dùng <strong>Kubernetes (GKE)</strong> để điều phối container và tự động mở rộng khi dữ liệu tăng đột biến.",
+    "optimized-the-logistics-data": "Tối ưu hệ thống truy xuất dữ liệu logistics bằng cách tái cấu trúc các truy vấn <strong>PostgreSQL</strong> phức tạp, giảm độ trễ API và cải thiện trải nghiệm người dùng cuối.",
+    "established-a-standardized-ci": "Xây dựng quy trình <strong>CI/CD</strong> chuẩn hóa với <strong>ArgoCD</strong> và <strong>GitHub Actions</strong>, rút ngắn chu kỳ triển khai từ vài giờ xuống 15 phút và giảm 90% lỗi thao tác thủ công.",
+    "guided-technical-solutions-and": "Định hướng giải pháp kỹ thuật và kèm cặp nhóm 5 kỹ sư, xây dựng văn hóa code review chặt chẽ và áp dụng <strong>Domain-Driven Design</strong> cho các bài toán logistics phức tạp.",
+    "applied-the-owasp-top": "Áp dụng <strong>OWASP Top 10</strong> và <strong>SANS/CWE Top 25</strong> để định hướng secure coding, review và hardening, đặc biệt cho xác thực và phân quyền, injection, cấu hình sai và lộ dữ liệu nhạy cảm.",
+    "stack": "Công nghệ",
+    "us-bank-with-global": "Ngân hàng Mỹ có phạm vi tiếp cận toàn cầu, cung cấp dịch vụ tài chính tiên tiến và chăm sóc khách hàng cao cấp.",
+    "developed-a-banking-system": "Phát triển hệ thống ngân hàng gồm hơn 40 microservice (account, billing, coupon, wallet, balance, assets, user, settings và các dịch vụ khác) với GraphQL, MongoDB, Node.js và TypeScript.",
+    "developed-the-admin-web": "Phát triển web app quản trị bằng Angular.",
+    "developed-the-client-web": "Phát triển web app cho khách hàng bằng React.",
+    "blockchain-platform-defi-nft": "Nền tảng blockchain (DeFi, NFT, smart contract) giúp việc đầu tư vào bất động sản tạo thu nhập trở nên dễ tiếp cận, minh bạch và an toàn.",
+    "developed-a-multi-chain": "Phát triển hệ thống ví custodial đa chuỗi hỗ trợ Bitcoin và Ethereum, bảo mật multi-sig và quản lý khóa trên <strong>AWS KMS</strong>.",
+    "built-a-serverless-backend": "Xây dựng backend serverless với <strong>AWS Lambda</strong> và <strong>Terraform</strong> (IaC), tối ưu chi phí vận hành tới 30% cho các dịch vụ off-chain (KYC, thông báo).",
+    "built-microservices-for-email": "Xây dựng microservice cho email, định danh khách hàng, chương trình giới thiệu, mua NFT, game và các tính năng khác.",
+    "awards": "Giải thưởng",
+    "1st-crowpitch-winner-vietnam": "Giải nhất CrowPitch, Vietnam Innovation Summit 2022",
+    "top-3-international-startup": "Top 3 startup quốc tế, Ignite Fusion 2022",
+    "top-5-finalists-vietnam": "Top 5 chung kết, Vietnam startups",
+    "top-15-startups-x": "Top 15 startup, X-Pitch 2022",
+    "3rd-place-solana-vietnam": "Giải ba, Solana Vietnam Coding Camp Season 2",
+    "twelve-years-from-mobile": "Mười hai năm, từ Mobile Developer đến Technical Leader của nhóm R&amp;D.",
+    "technical-leader-r-d": "Technical Leader, nhóm R&amp;D",
+    "researched-new-technology-and": "Nghiên cứu công nghệ và nền tảng mới để hỗ trợ các nhóm khác cải thiện việc phát triển game và server: công nghệ blockchain, Cocos Creator, Roblox.",
+    "part-of-the-team": "Thành viên nhóm xây dựng backend cho toàn bộ dự án game của bộ phận Gameloft for Brands, bao gồm dòng Applaydu (hơn 10 triệu lượt tải).",
+    "applaydu-friends-is-available": "Applaydu &amp; Friends có trên <a href=\"https://play.google.com/store/apps/details?id=com.ferrero.applayduGP\">Google Play</a> và <a href=\"https://apps.apple.com/lv/app/applaydu-friends-game/id1552397453\">App Store</a>.",
+    "programmer-supervisor-r-d": "Programmer Supervisor, nhóm R&amp;D",
+    "responsibilities": "Trách nhiệm",
+    "managed-and-mentored-a": "Quản lý và kèm cặp nhóm phát triển hơn 6 thành viên: phân công công việc, theo dõi tiến độ, năng suất và chất lượng đầu ra.",
+    "served-as-the-technical": "Là đầu mối kỹ thuật, tư vấn về tính năng, thiết kế và kiến trúc.",
+    "collaborated-with-qa-game": "Phối hợp với QA, game designer, developer và các nhóm sản xuất, e-commerce đa quốc gia (Ấn Độ, Việt Nam, Mexico, Canada, EU) để đảm bảo giao sản phẩm đúng hạn.",
+    "proposed-and-implemented-cost": "Đề xuất và triển khai các giải pháp kỹ thuật tiết kiệm chi phí để cải thiện hiệu năng và độ ổn định của sản phẩm.",
+    "achievements": "Thành tích",
+    "developed-payment-features-sfr": "Phát triển các tính năng thanh toán: SFR Billing, Freecharge Billing, PayTM Billing.",
+    "implemented-unlock-payment-tracking": "Triển khai tính năng unlock, thanh toán, tracking và quảng cáo cho game 2D và HD+ bằng C++ và native C.",
+    "designed-and-built-the": "Thiết kế và xây dựng kiến trúc app store thương mại điện tử của Gameloft: thanh toán thẻ tín dụng và PayPal, subscription, theo dõi hành vi người dùng (GCM) và hỗ trợ đa màn hình (layout linh hoạt, 9-patch).",
+    "applied-security-algorithms-md5": "Áp dụng các thuật toán bảo mật: MD5, DES, AES, RSA.",
+    "supported-and-mentored-the": "Hỗ trợ và kèm cặp nhóm về các vấn đề kỹ thuật, đóng vai trò cố vấn kỹ thuật cho các trường hợp phức tạp.",
+    "investigated-and-resolved-errors": "Điều tra và xử lý lỗi trên thiết bị thật, tối ưu hiệu năng và bộ nhớ để mang lại trải nghiệm ổn định cho người dùng.",
+    "helped-the-sms-billing": "Góp phần đưa hệ thống SMS billing hoạt động tại hơn 200 quốc gia.",
+    "developed-a-payment-system": "Phát triển hệ thống thanh toán trên các nền tảng J2ME, Android và BlackBerry.",
+    "main-developer-for-the": "Developer chính của bộ công cụ UnlockTnB, chuyển yêu cầu của nhóm sản phẩm thành tính năng của công cụ billing.",
+    "developed-sms-billing-http": "Phát triển SMS billing, HTTP billing và TP billing cho các dự án UnlockTnB.",
+    "helped-the-sms-billing-2": "Góp phần đưa hệ thống SMS billing hoạt động tại hơn 50 quốc gia.",
+    "architecture": "Kiến trúc",
+    "cloud-and-devops": "Cloud và DevOps",
+    "databases": "Cơ sở dữ liệu",
+    "ai-and-data-science": "AI và khoa học dữ liệu",
+    "mobile-and-game": "Mobile và game",
+    "master-of-science-in": "Thạc sĩ Khoa học Máy tính",
+    "university-of-information-technology": "Trường Đại học Công nghệ Thông tin, ĐHQG-HCM, 2017",
+    "accomplishments": "Đề tài đã thực hiện",
+    "grid-computing-performance-on": "Hiệu năng grid computing trên nền tảng .NET",
+    "natural-language-processing-nlp": "Xử lý ngôn ngữ tự nhiên (NLP) cho tiếng Việt",
+    "time-database-and-nosql": "Time database và NoSQL với MongoDB cho game online",
+    "neural-algorithms-for-handwriting": "Thuật toán mạng nơ-ron nhận dạng chữ viết tay",
+    "bachelor-s-degree-in": "Cử nhân Công nghệ Thông tin",
+    "posts-and-telecommunications-institute": "Học viện Công nghệ Bưu chính Viễn thông, 2009",
+    "network-management-with-cacti": "Quản trị mạng với Cacti",
+    "graphics-algorithms-for-building": "Thuật toán đồ họa để xây dựng ứng dụng 2D và 3D",
+    "developing-software-with-the": "Phát triển phần mềm với Task Parallel Library trên .NET",
+    "certificates": "Chứng chỉ",
+    "computer-science-center-university": "Trung tâm Tin học, Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM. Cấp cho Phan Ngọc Minh Quân. Tra cứu mã tại <a href=\"https://verify.csc.edu.vn/\">verify.csc.edu.vn</a>.",
+    "certificates-with-year-score": "Chứng chỉ kèm năm, điểm thang 10 và mã tra cứu",
+    "course": "Khóa học",
+    "period": "Thời gian",
+    "score": "Điểm",
+    "code": "Mã",
+    "references-available-on-request": "Thông tin người tham chiếu sẽ được cung cấp khi có yêu cầu.",
+    "updated-november-2026": "Cập nhật tháng 11/2026",
+    "nav-aria": "Các mục",
+    "photo-alt": "Ảnh chân dung Phan Ngọc Minh Quân",
+    "lang-aria": "Ngôn ngữ"
+  };
+  const nodes = [...document.querySelectorAll("[data-i18n]")];
+  const read = n => n.dataset.i18nAttr ? n.getAttribute(n.dataset.i18nAttr) : n.innerHTML;
+  const en = new Map(nodes.map(n => [n, read(n)]));
+  const enTitle = document.title;
+  const heads = document.querySelectorAll("thead th");
+  const buttons = document.querySelectorAll(".lang button");
+  const setLang = lang => {
+    const vi = lang === "vi";
+    document.documentElement.lang = lang;
+    document.title = vi ? VI.title : enTitle;
+    for (const n of nodes) {
+      const text = vi ? VI[n.dataset.i18n] ?? en.get(n) : en.get(n);
+      if (n.dataset.i18nAttr) n.setAttribute(n.dataset.i18nAttr, text);
+      else n.innerHTML = text;
+    }
+    for (const td of document.querySelectorAll("tbody td")) td.dataset.label = heads[td.cellIndex].textContent;
+    for (const b of buttons) b.setAttribute("aria-pressed", b.dataset.lang === lang);
+  };
+  for (const b of buttons) b.addEventListener("click", () => {
+    setLang(b.dataset.lang);
+    try { localStorage.setItem("cv-lang", b.dataset.lang); } catch {}
+  });
+  let saved = new URLSearchParams(location.search).get("lang");
+  if (!saved) try { saved = localStorage.getItem("cv-lang"); } catch {}
+  if (saved === "vi") setLang("vi");
+})();
+</script>
+</body>
+</html>

@@ -10,7 +10,7 @@
 
 ## Tech stack
 
-- **Sản phẩm:** HTML + CSS thuần, 1 file tự chứa (font + ảnh nhúng base64), không build step.
+- **Sản phẩm:** HTML + CSS + JS nhỏ (EN/VI), 1 file tự chứa (font + ảnh nhúng base64). Nguồn `<person>/cv-template.html` → `python -I scripts/build-cv-html.py <person>` → `cv_<person>.html`. Quy trình: `docs/business/cv-build-workflow.md`.
 - **Scaffold AI:** Markdown (`docs/`, `ai-context/`), PowerShell (`scripts/`).
 
 ## Naming convention
