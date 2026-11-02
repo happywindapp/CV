@@ -26,7 +26,7 @@ Publish: GitHub Pages của repo `happywindapp/CV` (nhánh `main`, root). URL ph
 
 - Tham khảo: portfolio Brittany Chiang và các roundup developer portfolio 2026 — hero màu đậm, section đánh số, timeline card, tech chip, 1 màu nhấn.
 - Token CSS ở `:root`: `--bg --surface --text --muted --line --accent --accent-strong --accent-soft --hero-*`. Light/dark tự động theo `prefers-color-scheme`; nav/hero/footer luôn tối bằng cách override token cục bộ (`.nav, .hero, footer { --bg: var(--hero-bg) ... }`).
-- Màu nhấn duy nhất: teal (`#0a7b70` light, `#5fd9c6` dark/hero). Không thêm màu nhấn thứ hai.
+- Mỗi CV đúng 1 màu nhấn, chọn theo nhận diện của người đó, đổi qua token (`:root`, dark, print, gradient hero, glow ảnh): Quan teal (`#0a7b70` light, `#5fd9c6` dark/hero); Serena mocha (`#8c5e45` light, `#e2b598` dark/hero, hero nâu `#2b1b14`). Không thêm màu nhấn thứ hai.
 - Bo góc: card 10px (`--radius`), nút 8px, chip pill, ảnh tròn.
 - Khối trang: hero (tên, chức danh, tagline, chip liên hệ, ảnh) → 4 card số liệu đè mép hero → `01 About` → `02 Experience` (timeline, card mỗi công ty, `Stack` dạng chip) → `03 Skills` (card + chip viền) → `04 Education` (card bằng có link + bảng chứng chỉ có link PDF) → footer.
 - Responsive: breakpoint `@media screen and (max-width: 47.99rem)` (phải có `screen` để bản in A4 không rơi vào layout mobile); nav cuộn ngang trên mobile; ẩn nút Save PDF dưới 26rem.

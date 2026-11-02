@@ -10,6 +10,7 @@ Build các CV cá nhân dạng trang HTML tĩnh tự chứa, song ngữ EN/VI, p
 
 - Workspace root `c:/CV` **chính là git repo** GitHub `happywindapp/CV`, nhánh `main`; GitHub Pages bật ở root.
 - CV đã có: Quan Phan — `quan_phan/` → `cv_quan_phan.html`, live tại `https://happywindapp.github.io/CV/cv_quan_phan.html` (path phân biệt hoa thường).
+- CV đã có: Serena Truong — `duyen_truong/` → `cv_duyen_truong.html` (nguồn: `duyen_truong/CV_SERENA TRUONG.pdf`, trang 1 EN, trang 2 VI; PDF bị ignore).
 - User tự commit/push, thường commit thẳng `cv_*.html` ngay sau mỗi lượt sửa.
 
 ## Kiến trúc high-level
