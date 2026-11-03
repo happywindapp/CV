@@ -191,6 +191,9 @@ section > h2::before {
   letter-spacing: 0;
   font-variant-numeric: tabular-nums;
 }
+.ic { flex: none; width: 1em; height: 1em; fill: currentColor; }
+section > h2 .ic, .certs-title .ic { width: 1.75rem; height: 1.75rem; color: var(--accent); }
+.certs-title { display: flex; align-items: center; gap: 0.625rem; }
 section > h2::after { content: ""; flex: 0 1 14rem; height: 1px; background: var(--line); }
 
 .about { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 3rem; }
@@ -238,6 +241,9 @@ section > h2::after { content: ""; flex: 0 1 14rem; height: 1px; background: var
 .org { font-weight: 600; color: var(--accent); }
 .org a { color: inherit; text-decoration: none; }
 .org a:hover { text-decoration: underline; }
+.card-head { display: flex; align-items: center; gap: 0.875rem; }
+.logo { flex: none; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; padding: 0.3125rem; border: 1px solid var(--line); border-radius: 8px; background: #fff; object-fit: contain; color: var(--accent-strong); font-weight: 600; font-size: 0.9375rem; }
+span.logo { background: var(--accent-soft); }
 .note { margin-top: 0.375rem; color: var(--muted); font-size: 0.9375rem; }
 .points { margin-top: 0.875rem; }
 .points li { position: relative; padding-left: 1.125rem; margin-top: 0.4375rem; }
@@ -257,7 +263,7 @@ section > h2::after { content: ""; flex: 0 1 14rem; height: 1px; background: var
 .stack { margin-top: 1.125rem; padding-top: 1rem; border-top: 1px dashed var(--line); }
 .stack > strong { display: block; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 .tags { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-top: 0.5rem; }
-.tags li { padding: 0.0625rem 0.625rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: 0.8125rem; font-weight: 600; line-height: 1.7; }
+.tags li { display: inline-flex; align-items: center; gap: 0.3125rem; padding: 0.0625rem 0.625rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent-strong); font-size: 0.8125rem; font-weight: 600; line-height: 1.7; }
 .tags-outline li { border: 1px solid var(--line); background: none; color: var(--text); font-weight: 400; }
 
 .roles { margin-top: 1.25rem; border-left: 2px solid var(--line); }
@@ -289,7 +295,7 @@ section > h2::after { content: ""; flex: 0 1 14rem; height: 1px; background: var
 }
 .skills > div:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); }
 .skills dt { display: flex; align-items: center; gap: 0.5rem; font-size: 1.0625rem; }
-.skills dt::before { content: ""; width: 0.5rem; height: 1.125rem; border-radius: 2px; background: var(--accent); }
+.skills dt .ic { width: 1.25rem; height: 1.25rem; color: var(--accent); }
 .skills .tags { margin-top: 0.75rem; }
 
 .degrees { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
@@ -333,6 +339,11 @@ tbody tr:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); 
 tbody td:nth-of-type(2) { font-weight: 600; color: var(--accent); }
 .num { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .other-certs { margin-top: 1.5rem; }
+.other-certs li { display: flex; align-items: center; gap: 0.625rem; margin-top: 0.5rem; }
+.mini-logo { display: inline-block; flex: none; width: 1.375rem; height: 1.375rem; margin-right: 0.5rem; vertical-align: -0.3rem; border-radius: 4px; background: #fff center / contain no-repeat; }
+.other-certs .mini-logo { margin-right: 0; }
+.csc-logo { background-image: url({{LOGO:csc}}); }
+.udemy-logo { background-image: url({{LOGO:udemy}}); }
 
 footer { margin-top: 5rem; padding-block: 2rem 2.5rem; background: var(--hero-bg); color: var(--muted); font-size: 0.9375rem; }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.25rem 2rem; }
@@ -422,6 +433,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 </style>
 </head>
 <body>
+{{ICON_SPRITE}}
 <a class="skip" href="#main" data-i18n="skip-to-content">Skip to content</a>
 
 <nav class="nav" aria-label="Sections" data-i18n="nav-aria" data-i18n-attr="aria-label">
@@ -470,7 +482,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   </dl>
 
     <section id="about">
-      <h2 data-i18n="about">About</h2>
+      <h2><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg><span data-i18n="about">About</span></h2>
       <div class="about">
         <div class="about-main">
           <p data-i18n="technical-architect-with-over">Technical Architect with over 15 years of in-depth experience designing and operating high-performance distributed systems. Strategic focus on transforming monolithic systems into microservices on cloud-native platforms (AWS, GCP), optimizing operating costs and enhancing scalability.</p>
@@ -487,13 +499,15 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </section>
 
     <section id="experience">
-      <h2 data-i18n="experience">Experience</h2>
+      <h2><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg><span data-i18n="experience">Experience</span></h2>
 
       <article class="job">
         <p class="when" data-i18n="2026-present">2026 - Present</p>
         <div>
-          <h3>Full Stack Developer</h3>
-          <p class="org"><a href="https://www.hsc.com.vn/">HSC</a></p>
+          <div class="card-head">
+            <img class="logo" src="{{LOGO:hsc}}" alt="HSC logo">
+            <div><h3>Full Stack Developer</h3><p class="org"><a href="https://www.hsc.com.vn/">HSC</a></p></div>
+          </div>
           <p class="note" data-i18n="one-of-vietnam-s">One of Vietnam's leading securities firms and investment banks, founded in 2003.</p>
           <ul class="points">
             <li data-i18n="architected-and-delivered-key">Architected and delivered key trading platforms: Carbon Trading and Private Corporate Bond Trading.</li>
@@ -507,8 +521,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <article class="job">
         <p class="when">2023 - 2026</p>
         <div>
-          <h3>Technical Architect</h3>
-          <p class="org"><a href="https://cyberlogitec.com.vn/">CyberLogitec</a></p>
+          <div class="card-head">
+            <img class="logo" src="{{LOGO:cyberlogitec}}" alt="CyberLogitec logo">
+            <div><h3>Technical Architect</h3><p class="org"><a href="https://cyberlogitec.com.vn/">CyberLogitec</a></p></div>
+          </div>
           <p class="note" data-i18n="it-solutions-for-shipping">IT solutions for shipping, terminal and forwarding, delivered to global customers across 10+ countries.</p>
           <ul class="points">
             <li data-i18n="led-the-design-and">Led the design and implementation of a cloud-native architecture on <strong>Google Cloud Platform</strong>, using <strong>Kubernetes (GKE)</strong> to orchestrate containers and auto-scale through surges in data.</li>
@@ -524,8 +540,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <article class="job">
         <p class="when">2023</p>
         <div>
-          <h3>Full Stack Developer</h3>
-          <p class="org">Mercantile Bank International</p>
+          <div class="card-head">
+            <span class="logo" aria-hidden="true">MB</span>
+            <div><h3>Full Stack Developer</h3><p class="org">Mercantile Bank International</p></div>
+          </div>
           <p class="note" data-i18n="us-bank-with-global">US bank with global access, offering progressive financial services and premium client care.</p>
           <ul class="points">
             <li data-i18n="developed-a-banking-system">Developed a banking system of 40+ microservices (account, billing, coupon, wallet, balance, assets, user, settings and more) with GraphQL, MongoDB, Node.js and TypeScript.</li>
@@ -537,8 +555,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <article class="job">
         <p class="when">2022 - 2023</p>
         <div>
-          <h3>Full Stack Developer</h3>
-          <p class="org">Metain</p>
+          <div class="card-head">
+            <span class="logo" aria-hidden="true">M</span>
+            <div><h3>Full Stack Developer</h3><p class="org">Metain</p></div>
+          </div>
           <p class="note" data-i18n="blockchain-platform-defi-nft">Blockchain platform (DeFi, NFT, smart contracts) making investment in income-producing real estate affordable, transparent and safe.</p>
           <ul class="points">
             <li data-i18n="developed-a-multi-chain">Developed a multi-chain custodial wallet system supporting Bitcoin and Ethereum, with multi-sig security and key management on <strong>AWS KMS</strong>.</li>
@@ -560,8 +580,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <article class="job">
         <p class="when">2010 - 2022</p>
         <div>
-          <h3>Gameloft Vietnam</h3>
-          <p class="org"><a href="https://www.gameloft.com/">gameloft.com</a></p>
+          <div class="card-head">
+            <img class="logo" src="{{LOGO:gameloft}}" alt="Gameloft logo">
+            <div><h3>Gameloft Vietnam</h3><p class="org"><a href="https://www.gameloft.com/">gameloft.com</a></p></div>
+          </div>
           <p class="note" data-i18n="twelve-years-from-mobile">Twelve years, from Mobile Developer to Technical Leader of the R&amp;D team.</p>
           <div class="roles">
             <div class="role">
@@ -612,25 +634,27 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </section>
 
     <section id="skills">
-      <h2 data-i18n="skills">Skills</h2>
+      <h2><svg class="ic" aria-hidden="true"><use href="#i-code-xml"/></svg><span data-i18n="skills">Skills</span></h2>
       <dl class="skills">
-        <div><dt data-i18n="architecture">Architecture</dt><dd><ul class="tags tags-outline"><li>Solution Architecture</li><li>Cloud-Native Architecture</li><li>Application and System Architecture</li><li>Security</li><li>Microservices</li><li>Domain-Driven Design (Bounded Context, Entities, Aggregates)</li></ul></dd></div>
-        <div><dt data-i18n="cloud-and-devops">Cloud and DevOps</dt><dd><ul class="tags tags-outline"><li>AWS (EC2, Lambda, DynamoDB, S3)</li><li>GCP (Kubernetes, AlloyDB, Secret Manager)</li><li>Docker</li><li>Terraform</li><li>ArgoCD</li><li>GitHub Actions</li><li>CI/CD</li><li>Datadog</li><li>Linux (CLI, networking, monitoring)</li></ul></dd></div>
-        <div><dt>Backend</dt><dd><ul class="tags tags-outline"><li>Node.js</li><li>NestJS</li><li>TypeScript</li><li>JavaScript (ES6, asynchronous, OOP, events)</li><li>GraphQL</li><li>REST APIs</li><li>RabbitMQ</li><li>Kafka</li></ul></dd></div>
-        <div><dt>Frontend</dt><dd><ul class="tags tags-outline"><li>React</li><li>Next.js</li><li>Angular</li><li>HTML</li><li>CSS</li><li>Bootstrap</li></ul></dd></div>
-        <div><dt data-i18n="databases">Databases</dt><dd><ul class="tags tags-outline"><li>SQL</li><li>NoSQL</li><li>PostgreSQL</li><li>MongoDB</li><li>DynamoDB</li><li>AlloyDB</li></ul></dd></div>
-        <div><dt data-i18n="ai-and-data-science">AI and data science</dt><dd><ul class="tags tags-outline"><li>Machine Learning (Decision Trees, SVM, Deep Learning)</li><li>NLP</li><li>Big Data</li><li>Data Analysis</li><li>Data Manipulation</li><li>Visualization</li><li>Python</li></ul></dd></div>
-        <div><dt>Blockchain</dt><dd><ul class="tags tags-outline"><li>Ethereum</li><li>Solidity</li><li>Web3</li><li>DeFi</li><li>Smart Contracts</li></ul></dd></div>
-        <div><dt data-i18n="mobile-and-game">Mobile and game</dt><dd><ul class="tags tags-outline"><li>Android (Firebase, security and permissions)</li><li>Java (J2ME, OOP, collections, multithreading)</li><li>Unity</li><li>2D graphics</li><li>optimization</li><li>C/C++ (memory management, pointers, OOP)</li></ul></dd></div>
+        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-network"/></svg><span data-i18n="architecture">Architecture</span></dt><dd><ul class="tags tags-outline"><li>Solution Architecture</li><li>Cloud-Native Architecture</li><li>Application and System Architecture</li><li><svg class="ic" aria-hidden="true"><use href="#i-shield"/></svg>Security</li><li>Microservices</li><li>Domain-Driven Design (Bounded Context, Entities, Aggregates)</li></ul></dd></div>
+        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg><span data-i18n="cloud-and-devops">Cloud and DevOps</span></dt><dd><ul class="tags tags-outline"><li><svg class="ic" aria-hidden="true"><use href="#i-amazonwebservices"/></svg>AWS (EC2, Lambda, DynamoDB, S3)</li><li><svg class="ic" aria-hidden="true"><use href="#i-googlecloud"/></svg>GCP (Kubernetes, AlloyDB, Secret Manager)</li><li><svg class="ic" aria-hidden="true"><use href="#i-docker"/></svg>Docker</li><li><svg class="ic" aria-hidden="true"><use href="#i-terraform"/></svg>Terraform</li><li><svg class="ic" aria-hidden="true"><use href="#i-argo"/></svg>ArgoCD</li><li><svg class="ic" aria-hidden="true"><use href="#i-githubactions"/></svg>GitHub Actions</li><li>CI/CD</li><li><svg class="ic" aria-hidden="true"><use href="#i-datadog"/></svg>Datadog</li><li><svg class="ic" aria-hidden="true"><use href="#i-linux"/></svg>Linux (CLI, networking, monitoring)</li></ul></dd></div>
+        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-server"/></svg><span>Backend</span></dt><dd><ul class="tags tags-outline"><li><svg class="ic" aria-hidden="true"><use href="#i-nodedotjs"/></svg>Node.js</li><li><svg class="ic" aria-hidden="true"><use href="#i-nestjs"/></svg>NestJS</li><li><svg class="ic" aria-hidden="true"><use href="#i-typescript"/></svg>TypeScript</li><li><svg class="ic" aria-hidden="true"><use href="#i-javascript"/></svg>JavaScript (ES6, asynchronous, OOP, events)</li><li><svg class="ic" aria-hidden="true"><use href="#i-graphql"/></svg>GraphQL</li><li>REST APIs</li><li><svg class="ic" aria-hidden="true"><use href="#i-rabbitmq"/></svg>RabbitMQ</li><li><svg class="ic" aria-hidden="true"><use href="#i-apachekafka"/></svg>Kafka</li></ul></dd></div>
+        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-monitor"/></svg><span>Frontend</span></dt><dd><ul class="tags tags-outline"><li><svg class="ic" aria-hidden="true"><use href="#i-react"/></svg>React</li><li><svg class="ic" aria-hidden="true"><use href="#i-nextdotjs"/></svg>Next.js</li><li><svg class="ic" aria-hidden="true"><use href="#i-angular"/></svg>Angular</li><li><svg class="ic" aria-hidden="true"><use href="#i-html5"/></svg>HTML</li><li><svg class="ic" aria-hidden="true"><use href="#i-css"/></svg>CSS</li><li><svg class="ic" aria-hidden="true"><use href="#i-bootstrap"/></svg>Bootstrap</li></ul></dd></div>
+        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-database"/></svg><span data-i18n="databases">Databases</span></dt><dd><ul class="tags tags-outline"><li>SQL</li><li>NoSQL</li><li><svg class="ic" aria-hidden="true"><use href="#i-postgresql"/></svg>PostgreSQL</li><li><svg class="ic" aria-hidden="true"><use href="#i-mongodb"/></svg>MongoDB</li><li><svg class="ic" aria-hidden="true"><use href="#i-amazondynamodb"/></svg>DynamoDB</li><li><svg class="ic" aria-hidden="true"><use href="#i-googlecloud"/></svg>AlloyDB</li></ul></dd></div>
+        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-brain"/></svg><span data-i18n="ai-and-data-science">AI and data science</span></dt><dd><ul class="tags tags-outline"><li>Machine Learning (Decision Trees, SVM, Deep Learning)</li><li>NLP</li><li>Big Data</li><li>Data Analysis</li><li>Data Manipulation</li><li>Visualization</li><li><svg class="ic" aria-hidden="true"><use href="#i-python"/></svg>Python</li></ul></dd></div>
+        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-blocks"/></svg><span>Blockchain</span></dt><dd><ul class="tags tags-outline"><li><svg class="ic" aria-hidden="true"><use href="#i-ethereum"/></svg>Ethereum</li><li><svg class="ic" aria-hidden="true"><use href="#i-solidity"/></svg>Solidity</li><li><svg class="ic" aria-hidden="true"><use href="#i-web3dotjs"/></svg>Web3</li><li>DeFi</li><li>Smart Contracts</li></ul></dd></div>
+        <div><dt><svg class="ic" aria-hidden="true"><use href="#i-gamepad-2"/></svg><span data-i18n="mobile-and-game">Mobile and game</span></dt><dd><ul class="tags tags-outline"><li><svg class="ic" aria-hidden="true"><use href="#i-android"/></svg>Android (Firebase, security and permissions)</li><li><svg class="ic" aria-hidden="true"><use href="#i-openjdk"/></svg>Java (J2ME, OOP, collections, multithreading)</li><li><svg class="ic" aria-hidden="true"><use href="#i-unity"/></svg>Unity</li><li>2D graphics</li><li>optimization</li><li><svg class="ic" aria-hidden="true"><use href="#i-cplusplus"/></svg>C/C++ (memory management, pointers, OOP)</li></ul></dd></div>
       </dl>
     </section>
 
     <section id="education">
-      <h2 data-i18n="education">Education</h2>
+      <h2><svg class="ic" aria-hidden="true"><use href="#i-graduation-cap"/></svg><span data-i18n="education">Education</span></h2>
       <div class="degrees">
         <div>
-          <h3><a href="quan_phan/degree/bang_thac_sy.jpg" target="_blank" rel="noopener" data-i18n="master-of-science-in">Master of Science in Computer Science</a></h3>
-          <p class="note" data-i18n="university-of-information-technology">University of Information Technology, VNU-HCM, 2017</p>
+          <div class="card-head">
+            <img class="logo" src="{{LOGO:uit}}" alt="UIT logo">
+            <div><h3><a href="quan_phan/degree/bang_thac_sy.jpg" target="_blank" rel="noopener" data-i18n="master-of-science-in">Master of Science in Computer Science</a></h3><p class="note" data-i18n="university-of-information-technology">University of Information Technology, VNU-HCM, 2017</p></div>
+          </div>
           <h4 class="sub" data-i18n="accomplishments">Accomplishments</h4>
           <ul class="points">
             <li data-i18n="grid-computing-performance-on">Grid computing performance on the .NET platform</li>
@@ -640,8 +664,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           </ul>
         </div>
         <div>
-          <h3 data-i18n="bachelor-s-degree-in">Bachelor's degree in Information Technology</h3>
-          <p class="note" data-i18n="posts-and-telecommunications-institute">Posts and Telecommunications Institute of Technology, 2009</p>
+          <div class="card-head">
+            <img class="logo" src="{{LOGO:ptit}}" alt="PTIT logo">
+            <div><h3 data-i18n="bachelor-s-degree-in">Bachelor's degree in Information Technology</h3><p class="note" data-i18n="posts-and-telecommunications-institute">Posts and Telecommunications Institute of Technology, 2009</p></div>
+          </div>
           <h4 class="sub" data-i18n="accomplishments">Accomplishments</h4>
           <ul class="points">
             <li data-i18n="network-management-with-cacti">Network management with Cacti</li>
@@ -651,7 +677,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         </div>
       </div>
 
-      <h3 class="certs-title" data-i18n="certificates">Certificates</h3>
+      <h3 class="certs-title"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg><span data-i18n="certificates">Certificates</span></h3>
       <p class="certs-note" data-i18n="computer-science-center-university">Computer Science Center, University of Science, VNU-HCM. Issued to Phan Ngọc Minh Quân. Check any code at <a href="https://verify.csc.edu.vn/">verify.csc.edu.vn</a>.</p>
       <table>
         <caption data-i18n="certificates-with-year-score">Certificates with year, score out of 10 and verification code</caption>
@@ -659,19 +685,19 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <tr><th scope="col" data-i18n="course">Course</th><th scope="col" data-i18n="period">Period</th><th scope="col" data-i18n="score">Score</th><th scope="col" data-i18n="code">Code</th></tr>
         </thead>
         <tbody>
-          <tr><th scope="row"><a href="quan_phan/certificate/DevOps_CICD.pdf" target="_blank" rel="noopener">DevOps Automation with CI/CD</a></th><td class="num" data-label="Period">2026</td><td class="num" data-label="Score">10.0</td><td class="num" data-label="Code">1468214</td></tr>
-          <tr><th scope="row"><a href="quan_phan/certificate/Machine%20Learning%20with%20Python.pdf" target="_blank" rel="noopener">Machine Learning with Python</a></th><td class="num" data-label="Period">2026</td><td class="num" data-label="Score">9.5</td><td class="num" data-label="Code">1452308</td></tr>
-          <tr><th scope="row"><a href="quan_phan/certificate/Big%20Data%20in%20Machine%20Learning.pdf" target="_blank" rel="noopener">Big Data in Machine Learning</a></th><td class="num" data-label="Period">2026</td><td class="num" data-label="Score">10.0</td><td class="num" data-label="Code">1451640</td></tr>
-          <tr><th scope="row"><a href="quan_phan/certificate/Data%20Pre-processing%20and%20Analysis.pdf" target="_blank" rel="noopener">Data Pre-processing and Analysis</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">9.0</td><td class="num" data-label="Code">1424677</td></tr>
-          <tr><th scope="row"><a href="quan_phan/certificate/Database%20SQL%20and%20Data%20Collection%20for%20Data%20Science.pdf" target="_blank" rel="noopener">Database SQL and Data Collection for Data Science</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">8.5</td><td class="num" data-label="Code">1403000</td></tr>
-          <tr><th scope="row"><a href="quan_phan/certificate/Data%20Manipulation%20and%20Data%20Visualization%20with%20Python.pdf" target="_blank" rel="noopener">Data Manipulation and Data Visualization with Python</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">10.0</td><td class="num" data-label="Code">1402969</td></tr>
-          <tr><th scope="row"><a href="quan_phan/certificate/Fundamentals%20of%20Python.pdf" target="_blank" rel="noopener">Fundamentals of Python</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">9.5</td><td class="num" data-label="Code">1390856</td></tr>
-          <tr><th scope="row"><a href="quan_phan/certificate/Bootstrap%2C%20PHP%2C%20MVC%2C%20Laravel%20Framework.pdf" target="_blank" rel="noopener">Bootstrap, PHP, MVC, Laravel Framework</a></th><td class="num" data-label="Period">2019</td><td class="num" data-label="Score">8.5</td><td class="num" data-label="Code">237333</td></tr>
+          <tr><th scope="row"><span class="mini-logo csc-logo" aria-hidden="true"></span><a href="quan_phan/certificate/DevOps_CICD.pdf" target="_blank" rel="noopener">DevOps Automation with CI/CD</a></th><td class="num" data-label="Period">2026</td><td class="num" data-label="Score">10.0</td><td class="num" data-label="Code">1468214</td></tr>
+          <tr><th scope="row"><span class="mini-logo csc-logo" aria-hidden="true"></span><a href="quan_phan/certificate/Machine%20Learning%20with%20Python.pdf" target="_blank" rel="noopener">Machine Learning with Python</a></th><td class="num" data-label="Period">2026</td><td class="num" data-label="Score">9.5</td><td class="num" data-label="Code">1452308</td></tr>
+          <tr><th scope="row"><span class="mini-logo csc-logo" aria-hidden="true"></span><a href="quan_phan/certificate/Big%20Data%20in%20Machine%20Learning.pdf" target="_blank" rel="noopener">Big Data in Machine Learning</a></th><td class="num" data-label="Period">2026</td><td class="num" data-label="Score">10.0</td><td class="num" data-label="Code">1451640</td></tr>
+          <tr><th scope="row"><span class="mini-logo csc-logo" aria-hidden="true"></span><a href="quan_phan/certificate/Data%20Pre-processing%20and%20Analysis.pdf" target="_blank" rel="noopener">Data Pre-processing and Analysis</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">9.0</td><td class="num" data-label="Code">1424677</td></tr>
+          <tr><th scope="row"><span class="mini-logo csc-logo" aria-hidden="true"></span><a href="quan_phan/certificate/Database%20SQL%20and%20Data%20Collection%20for%20Data%20Science.pdf" target="_blank" rel="noopener">Database SQL and Data Collection for Data Science</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">8.5</td><td class="num" data-label="Code">1403000</td></tr>
+          <tr><th scope="row"><span class="mini-logo csc-logo" aria-hidden="true"></span><a href="quan_phan/certificate/Data%20Manipulation%20and%20Data%20Visualization%20with%20Python.pdf" target="_blank" rel="noopener">Data Manipulation and Data Visualization with Python</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">10.0</td><td class="num" data-label="Code">1402969</td></tr>
+          <tr><th scope="row"><span class="mini-logo csc-logo" aria-hidden="true"></span><a href="quan_phan/certificate/Fundamentals%20of%20Python.pdf" target="_blank" rel="noopener">Fundamentals of Python</a></th><td class="num" data-label="Period">2025</td><td class="num" data-label="Score">9.5</td><td class="num" data-label="Code">1390856</td></tr>
+          <tr><th scope="row"><span class="mini-logo csc-logo" aria-hidden="true"></span><a href="quan_phan/certificate/Bootstrap%2C%20PHP%2C%20MVC%2C%20Laravel%20Framework.pdf" target="_blank" rel="noopener">Bootstrap, PHP, MVC, Laravel Framework</a></th><td class="num" data-label="Period">2019</td><td class="num" data-label="Score">8.5</td><td class="num" data-label="Code">237333</td></tr>
         </tbody>
       </table>
-      <ul class="points other-certs">
-        <li>Udemy: Ethereum and Solidity: The Complete Developer's Guide</li>
-        <li>Udemy: The Complete Full-Stack Web Development Bootcamp</li>
+      <ul class="other-certs">
+        <li><span class="mini-logo udemy-logo" aria-hidden="true"></span>Udemy: Ethereum and Solidity: The Complete Developer's Guide</li>
+        <li><span class="mini-logo udemy-logo" aria-hidden="true"></span>Udemy: The Complete Full-Stack Web Development Bootcamp</li>
       </ul>
     </section>
   </main>

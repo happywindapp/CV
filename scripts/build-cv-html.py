@@ -1,4 +1,5 @@
 import base64
+import re
 import sys
 from pathlib import Path
 
@@ -23,12 +24,25 @@ def font_css():
     return "\n".join(faces)
 
 
+def icon_sprite(html):
+    symbols = []
+    for name in sorted(set(re.findall(r'href="#i-([\w-]+)"', html))):
+        svg = (ROOT / "assets" / "icons" / f"{name}.svg").read_text(encoding="utf-8")
+        attrs, body = re.search(r"<svg([^>]*)>(.*)</svg>", svg, re.S).groups()
+        attrs = re.sub(r'\s(xmlns|class|width|height|role)="[^"]*"', "", attrs)
+        body = re.sub(r">\s+<", "><", re.sub(r"<title>.*?</title>", "", body).strip())
+        symbols.append(f'<symbol id="i-{name}" {" ".join(attrs.split())}>{body}</symbol>')
+    return '<svg hidden aria-hidden="true">' + "".join(symbols) + "</svg>"
+
+
 # Usage: python -I scripts/build-cv-html.py <person_dir>  ->  cv_<person_dir>.html at repo root
 person = sys.argv[1].strip("/\\")
 src = ROOT / person
 html = (src / "cv-template.html").read_text(encoding="utf-8")
 html = html.replace("{{FONT_CSS}}", font_css())
 html = html.replace("{{PHOTO}}", "data:image/jpeg;base64," + b64(src / "photo.jpg"))
+html = html.replace("{{ICON_SPRITE}}", icon_sprite(html))
+html = re.sub(r"\{\{LOGO:([\w-]+)\}\}", lambda m: "data:image/png;base64," + b64(src / "logos" / f"{m[1]}.png"), html)
 target = ROOT / f"cv_{person}.html"
 target.write_text(html, encoding="utf-8", newline="\n")
 print(target, target.stat().st_size)

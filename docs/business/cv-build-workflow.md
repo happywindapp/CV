@@ -6,11 +6,13 @@
 
 | Đường dẫn | Vai trò |
 |---|---|
-| `<person>/cv-template.html` | Nguồn trang: nội dung + CSS + script EN/VI. Placeholder `{{FONT_CSS}}`, `{{PHOTO}}`. **Chỉ sửa ở đây.** |
+| `<person>/cv-template.html` | Nguồn trang: nội dung + CSS + script EN/VI. Placeholder `{{FONT_CSS}}`, `{{PHOTO}}`, `{{LOGO:<ten>}}`, `{{ICON_SPRITE}}`. **Chỉ sửa ở đây.** |
 | `<person>/photo.jpg` | Ảnh chân dung (~250×250, JPEG), nhúng base64 khi build. |
+| `<person>/logos/<ten>.png` | Logo công ty (~96px, PNG), template dùng `{{LOGO:<ten>}}`, nhúng base64 khi build. Công ty không còn website/logo ⇒ ô chữ viết tắt `<span class="logo">`. |
 | `<person>/certificate/*.pdf`, `<person>/degree/*.jpg` | File được trang link tới → phải commit (`.gitignore` có ngoại lệ `!quan_phan/certificate/*.pdf`; người mới cần thêm dòng tương tự). |
 | `<person>/*` khác (vd TopCV PDF) | Dữ liệu gốc, bị `*.pdf` ignore, không public. |
 | `assets/fonts/bvp-{latin,vietnamese}-{400,600}.woff2` | Be Vietnam Pro (OFL), dùng chung. |
+| `assets/icons/<ten>.svg` | Icon đơn sắc dùng chung: brand từ Simple Icons (CC0), icon chung từ Lucide (ISC). Template gọi `<svg class="ic"><use href="#i-<ten>"/></svg>`; build gom các icon được dùng thành sprite tại `{{ICON_SPRITE}}` (đặt ngay sau `<body>`). Thêm icon: tải `cdn.jsdelivr.net/npm/simple-icons@latest/icons/<slug>.svg` hoặc `lucide-static@latest/icons/<ten>.svg`. |
 | `scripts/build-cv-html.py` | `python -I scripts/build-cv-html.py <person>` → `cv_<person>.html` ở root (1 file tự chứa). |
 | `cv_<person>.html` | Output publish. **Không sửa tay** — lần build sau sẽ ghi đè. |
 
